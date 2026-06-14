@@ -1,4 +1,4 @@
-# OZON + 1688 Web Workbench
+# xuanping + 1688 Web Workbench
 
 本项目是  选品 + 1688 找货 + ERP 上品的本地网页版本。
 
