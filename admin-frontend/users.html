@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP绠＄悊鍙?- 鐢ㄦ埛鍒楄〃</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙绠＄悊鍙?/div>
+          <div class="brand-sub">鐢ㄦ埛銆佸簵閾轰笌鏁版嵁鏈嶅姟鍚庡彴</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍚庡彴姒傝</span><small>Admin</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鐢ㄦ埛绠＄悊</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="users.html"><span>鐢ㄦ埛鍒楄〃</span></a>
+            <a class="nav-subitem" href="plans.html"><span>濂楅鏉冮檺</span></a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>搴楅摵绠＄悊</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="stores.html"><span>鎺堟潈搴楅摵</span></a>
+            <a class="nav-subitem" href="sync.html"><span>鍚屾浠诲姟</span></a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>鏁版嵁鏈嶅姟</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="data-services.html"><span>鏁版嵁鎺ュ彛</span></a>
+            <a class="nav-subitem" href="jobs.html"><span>浠诲姟闃熷垪</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="../index.html"><span>杩斿洖鍓嶅彴</span><small>Frontend</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鐢ㄦ埛鍒楄〃</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="index.html">杩斿洖姒傝</a>
+          <a class="shell-pill gold" href="plans.html">濂楅鏉冮檺</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="stores.html">鍒囧埌搴楅摵绠＄悊</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP绠＄悊鍙?/span><span>/</span><span>鐢ㄦ埛绠＄悊</span><span>/</span><span>鐢ㄦ埛鍒楄〃</span></div>
+            <h2>鍓嶅彴鐢ㄦ埛鍦ㄨ繖閲岀粺涓€绠＄悊</h2>
+            <p>杩欓〉鐢ㄦ潵鎵挎帴鐢ㄦ埛娉ㄥ唽銆佺姸鎬佺鎺с€佸簵閾虹粦瀹氭暟閲忓拰鍔熻兘鏉冮檺銆傜幇鍦ㄥ厛鎶婄鐞嗙晫闈㈡惌濂斤紝鍚庨潰鍐嶆帴鐪熷疄鏁版嵁搴撳拰鐧诲綍绯荤粺銆?/p>
+            <div class="feature-links">
+              <span class="badge">娉ㄥ唽鏃堕棿</span>
+              <span class="badge">鍔熻兘鏉冮檺</span>
+              <span class="badge">搴楅摵缁戝畾</span>
+              <span class="badge">璐﹀彿鐘舵€?/span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鎬荤敤鎴锋暟</div><div class="v" data-bind="users.total"></div></div>
+            <div class="meta-card"><div class="k">杩?鏃ユ柊澧?/div><div class="v" data-bind="users.recent"></div></div>
+            <div class="meta-card"><div class="k">鍏嶈垂鐗堢敤鎴?/div><div class="v" data-bind="users.free"></div></div>
+            <div class="meta-card"><div class="k">宸茬粦瀹氬簵閾虹敤鎴?/div><div class="v" data-bind="users.bound"></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鐢ㄦ埛鎬昏〃</h3>
+              <span>杩欐槸鍚庡彴绠＄悊瑙嗚锛屼笉瀵瑰墠鍙扮敤鎴峰睍绀恒€?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鐢ㄦ埛銆侀偖绠便€佷富钀ユ柟鍚? data-table-search>
+            <select data-table-filter="plan">
+              <option value="all">鍏ㄩ儴鏉冮檺</option>
+              <option value="free_analysis">鍏嶈垂鍒嗘瀽</option>
+              <option value="setup_pending">寰呭畬鍠勬巿鏉?/option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="active">姝ｅ父</option>
+              <option value="pending">寰呴厤缃?/option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>鐢ㄦ埛</th>
+                <th>娉ㄥ唽鏃堕棿</th>
+                <th>缁戝畾搴楅摵</th>
+                <th>鍔熻兘鏉冮檺</th>
+                <th>鏈€杩戞椿璺?/th>
+                <th>鐘舵€?/th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.users" data-render-type="users" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/mock-data.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+

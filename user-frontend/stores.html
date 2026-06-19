@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 搴楅摵</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>搴楅摵</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="stores.html"><span>搴楅摵涓績</span></a>
+            <a class="nav-subitem" href="store-list.html"><span>搴楅摵鍒楄〃</span></a>
+            <a class="nav-subitem" href="store-auth.html"><span>搴楅摵鎺堟潈</span></a>
+            <a class="nav-subitem" href="store-api-config.html"><span>API / Cookie 閰嶇疆</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鉄?/div>
+          <div class="shell-pill">搴楅摵涓績</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="store-list.html">搴楅摵鍒楄〃</a>
+          <a class="shell-pill gold" href="store-auth.html">鏂板鎺堟潈</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="store-list.html">杩涘叆搴楅摵鍒楄〃</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>搴楅摵</span></div>
+            <h2>搴楅摵妯″潡</h2>
+            <p>搴楅摵妯″潡鏄湡瀹炲姛鑳芥帴鍏ョ殑鍏抽敭鍏ュ彛锛屽洜涓哄畠鎵挎帴鎺堟潈銆丆ookie/API銆佺姸鎬佹娴嬪拰搴楅摵閰嶇疆銆傜幇鍦ㄨ繖涓€灞傞〉闈篃缁熶竴鎴愬拰棣栭〉鍚屼竴濂楄瑙夐鏍笺€?/p>
+            <div class="feature-links">
+              <span class="badge">搴楅摵鎺堟潈</span>
+              <span class="badge">API / Cookie</span>
+              <span class="badge">鐘舵€佹娴?/span>
+              <span class="badge">鏉冮檺閰嶇疆</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">搴楅摵鏁伴噺</div><div class="v" data-bind="stores.total" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">API 妯″紡</div><div class="v" data-bind="stores.api" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">Cookie 妯″紡</div><div class="v" data-bind="stores.cookie" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寮傚父搴楅摵</div><div class="v" data-bind="stores.error" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title"><h3>寤鸿鍏堝仛鐨勫簵閾洪〉</h3><span>杩欎簺椤靛喅瀹氬悗闈㈣兘鍚︽帴鐪熷疄涓氬姟銆?/span></div></div>
+          <div class="card-grid">
+            <a class="card" href="store-list.html"><h4>搴楅摵鍒楄〃</h4><p>灞曠ず搴楅摵鐘舵€併€佺粦瀹氭柟寮忓拰鏈€杩戝悓姝ユ椂闂淬€?/p></a>
+            <a class="card" href="store-auth.html"><h4>搴楅摵鎺堟潈</h4><p>API銆丆ookie銆佸簵閾鸿处鍙峰拰鐘舵€佹牎楠屻€?/p></a>
+            <a class="card" href="store-api-config.html"><h4>API / Cookie 閰嶇疆</h4><p>缁熶竴绠＄悊 Client ID銆丄PI Key銆丆ookie 鍜屽仴搴锋娴嬨€?/p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

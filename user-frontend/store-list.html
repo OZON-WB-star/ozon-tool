@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 搴楅摵鍒楄〃</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>搴楅摵</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="stores.html"><span>搴楅摵涓績</span></a>
+            <a class="nav-subitem active" href="store-list.html"><span>搴楅摵鍒楄〃</span></a>
+            <a class="nav-subitem" href="store-auth.html"><span>搴楅摵鎺堟潈</span></a>
+            <a class="nav-subitem" href="store-api-config.html"><span>API 閰嶇疆</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">搴楅摵鍒楄〃</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="store-api-config.html">鏌ョ湅鎺ュ叆閰嶇疆</a>
+          <a class="shell-pill gold" href="store-auth.html">鏂板搴楅摵</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="store-api-config.html">鏌ョ湅閰嶇疆娓呭崟</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>搴楅摵</span><span>/</span><span>搴楅摵鍒楄〃</span></div>
+            <h2>缁熶竴绠＄悊搴楅摵鐘舵€併€佹巿鏉冩柟寮忓拰鍚屾鍋ュ悍搴?/h2>
+            <p>搴楅摵鍒楄〃鏄暣濂楃郴缁熺殑鍩虹鍏ュ彛涔嬩竴銆傚綋鍓嶅垪琛ㄥ凡缁忎粠鍏变韩鏁版嵁灞傜敓鎴愶紝鍚庨潰鎺?Seller API銆佺敤鎴疯嚜琛屾巿鏉冨簵閾猴紝鎴栬€呭垏鍒版垜浠嚜宸辩殑鏈嶅姟绔悓姝ヤ腑蹇冿紝閮藉彲浠ョ户缁鐢ㄣ€?/p>
+            <div class="feature-links">
+              <span class="badge">搴楅摵鐘舵€?/span>
+              <span class="badge">鎺堟潈鏂瑰紡</span>
+              <span class="badge">鍚屾鍋ュ悍搴?/span>
+              <span class="badge">寮傚父鎻愰啋</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">搴楅摵鎬绘暟</div><div class="v" data-bind="stores.total" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">API 妯″紡</div><div class="v" data-bind="stores.api" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">Cookie 妯″紡</div><div class="v" data-bind="stores.cookie" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寮傚父搴楅摵</div><div class="v" data-bind="stores.error" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>搴楅摵鎬昏</h3>
+              <span>鏀寔鎸夋帴鍏ユ柟寮忓拰鐘舵€佺瓫閫夛紝涓嬩竴杞彲缁х画琛ユ巿鏉冨巻鍙插拰鍚屾鏃ュ織銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储搴楅摵銆佺珯鐐广€佸缓璁姩浣? data-table-search>
+            <select data-table-filter="auth">
+              <option value="all">鍏ㄩ儴鎺ュ叆鏂瑰紡</option>
+              <option value="api">Seller API</option>
+              <option value="cookie">Cookie</option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="normal">姝ｅ父</option>
+              <option value="error">寮傚父</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>搴楅摵</th>
+                <th>鍥藉绔欑偣</th>
+                <th>鎺堟潈鏂瑰紡</th>
+                <th>鐘舵€?/th>
+                <th>鏈€杩戝悓姝?/th>
+                <th>鍋ュ悍搴?/th>
+                <th>寤鸿鍔ㄤ綔</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.stores" data-render-type="stores" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/ozon-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

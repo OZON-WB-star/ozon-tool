@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鍊欓€夊晢鍝佹睜</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙ERP</div><div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>閫夊搧</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="selection.html"><span>閫夊搧涓績</span></a>
+            <a class="nav-subitem active" href="selection-center.html"><span>鍊欓€夊晢鍝?/span></a>
+            <a class="nav-subitem" href="market-analysis.html"><span>澶х洏鎬昏</span></a>
+            <a class="nav-subitem" href="industry-analysis.html"><span>绫荤洰鍒嗘瀽</span></a>
+            <a class="nav-subitem" href="keyword-analysis.html"><span>鍏抽敭璇嶅垎鏋?/span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">鍊欓€夊晢鍝佹睜</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="product-analysis.html">鍗曞搧鍒嗘瀽</a><a class="shell-pill gold" href="pricing-tool.html">鍘诲畾浠?/a></div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="product-analysis.html">缁х画鐪嬪崟鍝佸垎鏋?/a>
+        </div>
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>閫夊搧</span><span>/</span><span>鍊欓€夊晢鍝佹睜</span></div><h2>鎶婂€煎緱娴嬬殑鍟嗗搧鍏堟矇娣€杩涙睜瀛愰噷</h2><p>杩欓噷鏄€夊搧閾捐矾鏈€瀹炵敤鐨勪竴灞傘€傚厛鎶婄湅杩囧競鍦恒€佺被鐩€佸叧閿瘝涔嬪悗绛涘嚭鏉ョ殑鍊欓€夊晢鍝佺粺涓€鏀惰繘鏉ワ紝鍚庨潰鍐嶅喅瀹氭槸鍚︽祴娆俱€佹墦鏍枫€佸畾浠峰拰涓婃灦銆?/p><div class="feature-links"><span class="badge">鍊欓€夎瘎鍒?/span><span class="badge">姣涘埄棰勪及</span><span class="badge">椋庨櫓鎻愮ず</span><span class="badge">鏉ユ簮璇存槑</span></div></div>
+          <div class="meta-grid"><div class="meta-card"><div class="k">鍊欓€夊晢鍝?/div><div class="v" data-bind="selection.candidateProducts" data-bind-countup></div></div><div class="meta-card"><div class="k">楂樹紭鍏堢被鐩?/div><div class="v" data-bind="selection.hotCategories" data-bind-countup></div></div><div class="meta-card"><div class="k">璺熻釜鍏抽敭璇?/div><div class="v" data-bind="selection.trackedKeywords" data-bind-countup></div></div><div class="meta-card"><div class="k">鏈懆鏈轰細</div><div class="v" data-bind="selection.opportunities" data-bind-countup></div></div></div>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>鍊欓€夊晢鍝佹竻鍗?/h3><span>浠庡競鍦恒€佺被鐩€佸叧閿瘝涓変釜缁村害绛涘嚭鏉ョ殑浼樺厛鍟嗗搧銆?/span></div></div>
+          <div class="toolbar"><input type="text" placeholder="鎼滅储鍟嗗搧銆佺被鐩€佹潵婧愮悊鐢? data-table-search></div>
+          <table>
+            <thead><tr><th>鍟嗗搧</th><th>绫荤洰</th><th>璇勫垎</th><th>姣涘埄</th><th>椋庨櫓</th><th>鏉ユ簮</th></tr></thead>
+            <tbody data-render-source="entities.selectionProducts" data-render-type="selection-products" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

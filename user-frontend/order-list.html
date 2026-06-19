@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 璁㈠崟鍒楄〃</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>璁㈠崟</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="orders.html"><span>璁㈠崟涓績</span></a>
+            <a class="nav-subitem active" href="order-list.html"><span>璁㈠崟鍒楄〃</span></a>
+            <a class="nav-subitem" href="order-exceptions.html"><span>寮傚父璁㈠崟</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">璁㈠崟鍒楄〃</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="analysis-orders.html">璁㈠崟缁撴瀯鍒嗘瀽</a>
+          <a class="shell-pill gold" href="order-exceptions.html">鏌ョ湅寮傚父璁㈠崟</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>璁㈠崟</span><span>/</span><span>璁㈠崟鍒楄〃</span></div>
+            <h2>璁㈠崟椤靛厛淇濊瘉楂橀鎿嶄綔椤烘墜</h2>
+            <p>褰撳墠宸茬粡琛ヤ笂璁㈠崟鎼滅储銆佺姸鎬佺瓫閫夊拰搴楅摵绛涢€夛紝鑰屼笖鍒楄〃琛屾敼鎴愪簡鍏变韩鏁版嵁娓叉煋銆傚悗闈㈡帴 Ozon 鍚庡彴鎴栬嚜寤烘湇鍔＄鏃讹紝鍙互鐩存帴娌跨敤杩欏澹冲眰鍜岃繃婊や氦浜掋€?/p>
+            <div class="feature-links">
+              <span class="badge">寰呭璐?/span>
+              <span class="badge">寰呭彂璐?/span>
+              <span class="badge">杩愯緭涓?/span>
+              <span class="badge">寮傚父鎷︽埅</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">浠婃棩璁㈠崟</div><div class="v" data-bind="orders.today" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭彂璐?/div><div class="v" data-bind="orders.pending" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寮傚父璁㈠崟</div><div class="v" data-bind="orders.exceptions" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">宸插彂璐?/div><div class="v" data-bind="orders.shipped" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>璁㈠崟娓呭崟</h3>
+              <span>鏀寔鎼滅储銆佺姸鎬佺瓫閫夊拰搴楅摵绛涢€夛紝涓嬩竴杞彲浠ョ户缁ˉ鎵归噺鎵撳嵃鍜岀墿娴佽窡韪€?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储璁㈠崟鍙枫€佸晢鍝併€佸鐞嗗缓璁? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="pending">寰呭彂璐?/option>
+              <option value="prepare">寰呭璐?/option>
+              <option value="shipping">杩愯緭涓?/option>
+            </select>
+            <select data-table-filter="store">
+              <option value="all">鍏ㄩ儴搴楅摵</option>
+              <option value="store_qiha">QIHA-GEILI</option>
+              <option value="store_pethome">PetHome Lab</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>璁㈠崟鍙?/th>
+                <th>鍟嗗搧</th>
+                <th>搴楅摵</th>
+                <th>閲戦</th>
+                <th>鐘舵€?/th>
+                <th>涓嬪崟鏃堕棿</th>
+                <th>澶勭悊寤鸿</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.orders" data-render-type="orders" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/ozon-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

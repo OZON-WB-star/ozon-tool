@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鍦ㄧ嚎鍟嗗搧</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鍟嗗搧</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="products.html"><span>鍟嗗搧涓績</span></a>
+            <a class="nav-subitem active" href="product-online.html"><span>鍦ㄧ嚎鍟嗗搧</span></a>
+            <a class="nav-subitem" href="product-drafts.html"><span>鍟嗗搧鑽夌</span></a>
+            <a class="nav-subitem" href="product-inventory.html"><span>搴撳瓨绠＄悊</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鍦ㄧ嚎鍟嗗搧</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="product-inventory.html">鏌ョ湅搴撳瓨</a>
+          <a class="shell-pill gold" href="product-drafts.html">杩涘叆鑽夌姹?/a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="analysis-products.html">鏌ョ湅鍟嗗搧鍒嗘瀽</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鍟嗗搧</span><span>/</span><span>鍦ㄧ嚎鍟嗗搧</span></div>
+            <h2>鍏堟妸姝ｅ湪鍗栫殑鍟嗗搧缁熶竴绠¤捣鏉?/h2>
+            <p>杩欓噷鎵挎帴鍦ㄧ嚎鍟嗗搧绠＄悊銆佷环鏍肩淮鎶ゃ€佸簱瀛樼姸鎬佸拰鍔ㄩ攢鎻愰啋銆傚綋鍓嶅垪琛ㄥ凡缁忔帴鍏ュ叡浜暟鎹眰锛屽悗闈㈠垏鎹㈠埌 Ozon 瀹炴椂鏁版嵁鏃讹紝鍙渶瑕佹浛鎹㈤€傞厤灞傦紝涓嶇敤閲嶅仛鍓嶅彴椤甸潰銆?/p>
+            <div class="feature-links">
+              <span class="badge">鍟嗗搧鍒楄〃</span>
+              <span class="badge">鎵归噺鏀逛环</span>
+              <span class="badge">搴撳瓨棰勮</span>
+              <span class="badge">涓婁笅鏋剁姸鎬?/span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鍦ㄧ嚎鍟嗗搧鏁?/div><div class="v" data-bind="products.online" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">浣庡簱瀛樺晢鍝?/div><div class="v" data-bind="products.lowStock" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鍔ㄩ攢鍟嗗搧</div><div class="v" data-bind="products.active" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呬紭鍖栧晢鍝?/div><div class="v" data-bind="products.optimize" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鍦ㄧ嚎鍟嗗搧娓呭崟</h3>
+              <span>鏀寔鍏抽敭璇嶃€佸簵閾哄拰鐘舵€佺瓫閫夛紝鍚庨潰鍙互缁х画鎺ユ壒閲忕紪杈戜笌浠锋牸鑱斿姩銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鍟嗗搧銆丼KU銆佽繍钀ュ缓璁? data-table-search>
+            <select data-table-filter="store">
+              <option value="all">鍏ㄩ儴搴楅摵</option>
+              <option value="store_qiha">QIHA-GEILI</option>
+              <option value="store_kitchen">Kitchen Nova</option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="normal">姝ｅ父閿€鍞?/option>
+              <option value="low">搴撳瓨鍋忎綆</option>
+              <option value="weak">鍔ㄩ攢鍋忓急</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>鍟嗗搧</th>
+                <th>搴楅摵</th>
+                <th>鍞环</th>
+                <th>搴撳瓨</th>
+                <th>杩?鏃ヨ鍗?/th>
+                <th>鐘舵€?/th>
+                <th>寤鸿鍔ㄤ綔</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.products" data-render-type="products" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/ozon-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP绠＄悊鍙?- 鏁版嵁鏈嶅姟</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙绠＄悊鍙?/div>
+          <div class="brand-sub">鐢ㄦ埛銆佸簵閾轰笌鏁版嵁鏈嶅姟鍚庡彴</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍚庡彴姒傝</span><small>Admin</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鏁版嵁鏈嶅姟</span><span>鈻?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="data-services.html"><span>鏁版嵁鎺ュ彛</span></a>
+            <a class="nav-subitem" href="jobs.html"><span>浠诲姟闃熷垪</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鏁版嵁鏈嶅姟</div>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="jobs.html">鏌ョ湅浠诲姟闃熷垪</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP绠＄悊鍙?/span><span>/</span><span>鏁版嵁鏈嶅姟</span></div>
+            <h2>鎶婂墠鍙拌兘鍔涢兘娌夊埌鍚庡彴鏈嶅姟灞?/h2>
+            <p>杩欎竴灞傝礋璐ｇ粰鍓嶅彴鎻愪緵閫夊搧銆佸垎鏋愩€佸伐鍏风瓑缁熶竴鎺ュ彛銆傜幇鍦ㄩ〉闈㈠凡缁忚兘鐩存帴璇诲彇鍚庡彴鏈嶅姟鐘舵€侊紝鏂逛究鍚庣画缁х画鍋氭潈闄愩€侀厤棰濆拰鏀惰垂灞傘€?/p>
+            <div class="feature-links">
+              <span class="badge">閫夊搧鏁版嵁</span>
+              <span class="badge">鍒嗘瀽鎺ュ彛</span>
+              <span class="badge">宸ュ叿鏈嶅姟</span>
+              <span class="badge">鏉冮檺鍒嗗眰</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">娉ㄥ唽鐢ㄦ埛</div><div class="v" data-bind="admin.registeredUsers" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鎺ュ叆搴楅摵</div><div class="v" data-bind="admin.connectedStores" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">娲昏穬浠诲姟</div><div class="v" data-bind="admin.activeSyncJobs" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鍏嶈垂鍒嗘瀽鐢ㄦ埛</div><div class="v" data-bind="admin.freeAnalysisUsers" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鏈嶅姟鐘舵€佹竻鍗?/h3>
+              <span>鍚庨潰鍙互缁х画鎶婃敹璐广€佹潈闄愬拰璋冪敤缁熻涔熸斁杩涙潵銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鏈嶅姟銆佽寖鍥淬€佽鏄? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="normal">姝ｅ父</option>
+              <option value="warn">寰呬紭鍖?/option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>鏈嶅姟</th>
+                <th>瑕嗙洊鑼冨洿</th>
+                <th>寮€鏀炬柟寮?/th>
+                <th>鐘舵€?/th>
+                <th>璐熻矗浜?/th>
+                <th>璇存槑</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.adminServices" data-render-type="admin-services" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/mock-data.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+

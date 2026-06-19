@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP绠＄悊鍙?- 鎺堟潈搴楅摵</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙绠＄悊鍙?/div><div class="brand-sub">鐢ㄦ埛銆佸簵閾轰笌鏁版嵁鏈嶅姟鍚庡彴</div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍚庡彴姒傝</span><small>Admin</small></a>
+        <div class="nav-section"><div class="nav-section-title active"><span>搴楅摵绠＄悊</span><span>鈱?/span></div><div class="nav-sublist"><a class="nav-subitem active" href="stores.html"><span>鎺堟潈搴楅摵</span></a><a class="nav-subitem" href="sync.html"><span>鍚屾浠诲姟</span></a></div></div>
+        <a class="nav-item" href="../index.html"><span>杩斿洖鍓嶅彴</span><small>Frontend</small></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell"><div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">鎺堟潈搴楅摵</div></div><div class="shell-topbar-right"><a class="shell-pill brand" href="../store-list.html">鍓嶅彴搴楅摵椤?/a></div></div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="users.html">鍒囧埌鐢ㄦ埛绠＄悊</a>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>搴楅摵鎺堟潈鎬昏〃</h3><span>鍚庡彴闆嗕腑鏌ョ湅姣忎釜鐢ㄦ埛鐨勫簵閾虹粦瀹氬拰鍋ュ悍搴︺€?/span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鐢ㄦ埛銆佸簵閾恒€佸娉? data-table-search>
+            <select data-table-filter="auth">
+              <option value="all">鍏ㄩ儴鏂瑰紡</option>
+              <option value="api">Seller API</option>
+              <option value="cookie">Cookie</option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="normal">姝ｅ父</option>
+              <option value="error">寮傚父</option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>鐢ㄦ埛</th><th>搴楅摵</th><th>鎺堟潈鏂瑰紡</th><th>鐘舵€?/th><th>鏈€杩戝悓姝?/th><th>澶囨敞</th></tr></thead>
+            <tbody data-render-source="entities.stores" data-render-type="admin-stores" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/mock-data.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+

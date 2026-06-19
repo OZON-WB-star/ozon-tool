@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP绠＄悊鍙?- 鍚屾浠诲姟</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙绠＄悊鍙?/div><div class="brand-sub">鐢ㄦ埛銆佸簵閾轰笌鏁版嵁鏈嶅姟鍚庡彴</div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍚庡彴姒傝</span><small>Admin</small></a>
+        <div class="nav-section"><div class="nav-section-title active"><span>搴楅摵绠＄悊</span><span>鈱?/span></div><div class="nav-sublist"><a class="nav-subitem" href="stores.html"><span>鎺堟潈搴楅摵</span></a><a class="nav-subitem active" href="sync.html"><span>鍚屾浠诲姟</span></a></div></div>
+        <a class="nav-item" href="../index.html"><span>杩斿洖鍓嶅彴</span><small>Frontend</small></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell"><div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">鍚屾浠诲姟</div></div></div>
+      <section class="content">
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>鍚屾浠诲姟鐩戞帶</h3><span>杩欐壒浠诲姟鍚庨潰鍙互鐩存帴鎺ョ湡瀹為槦鍒楀拰璋冨害鍣ㄣ€?/span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储浠诲姟銆佹潵婧愩€侀鐜? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="normal">姝ｅ父</option>
+              <option value="running">杩愯涓?/option>
+              <option value="warn">寰呬紭鍖?/option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>浠诲姟</th><th>鏉ユ簮</th><th>棰戠巼</th><th>鐘舵€?/th><th>鏈€杩戞墽琛?/th></tr></thead>
+            <tbody data-render-source="entities.syncJobs" data-render-type="sync-jobs" data-empty-cols="5"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/mock-data.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+

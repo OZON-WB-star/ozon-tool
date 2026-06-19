@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鏍峰搧璺熻繘</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙ERP</div><div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>璐ф簮</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="supply.html"><span>璐ф簮涓績</span></a>
+            <a class="nav-subitem" href="supplier-list.html"><span>渚涘簲鍟嗗垪琛?/span></a>
+            <a class="nav-subitem active" href="sample-tracking.html"><span>鏍峰搧璺熻繘</span></a>
+            <a class="nav-subitem" href="purchase-flow.html"><span>閲囪喘閾捐矾</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">鏍峰搧璺熻繘</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="supplier-list.html">渚涘簲鍟嗗垪琛?/a><a class="shell-pill gold" href="product-drafts.html">閫氳繃鍚庤繘鑽夌姹?/a></div>
+      </div>
+      <section class="content">
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>璐ф簮</span><span>/</span><span>鏍峰搧璺熻繘</span></div><h2>鏍峰搧椤佃礋璐ｆ妸閫夊搧鍙樻垚鍙垽鏂殑鍟嗗搧</h2><p>杩欓噷鍏堣褰曞瘎鏍枫€佸埌鏍枫€佹祴璇曞弽棣堝拰鏄惁杩涘叆鑽夌姹犮€傚悗缁彲浠ョ户缁帴鍥剧墖銆佽棰戙€佽川妫€璁板綍鍜屾墦鏍锋垚鏈€?/p><div class="feature-links"><span class="badge">寰呭瘎鏍?/span><span class="badge">鍦ㄩ€?/span><span class="badge">宸插埌鏍?/span><span class="badge">寰呰瘎浼?/span></div></div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鏍峰搧涓?/div><div class="v" data-bind="supply.sampleActive" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鏈懆鍒版牱</div><div class="v" data-bind="supply.sampleArrived" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">閫氳繃鏍峰搧</div><div class="v" data-bind="supply.samplePassed" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭娴?/div><div class="v" data-bind="supply.sampleRetest" data-bind-countup></div></div>
+          </div>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>鏍峰搧璁板綍</h3><span>鍚庨潰鍙户缁姞璇勫垎椤广€佽川妫€鍥剧墖鍜岃棰戙€?/span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鏍峰搧銆佷緵搴斿晢銆佷笅涓€姝? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="arrived">宸插埌鏍?/option>
+              <option value="review">寰呰瘎浼?/option>
+              <option value="shipping">鍦ㄩ€?/option>
+              <option value="pending">寰呭瘎鏍?/option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>鏍峰搧</th><th>渚涘簲鍟?/th><th>鐘舵€?/th><th>鍒版牱鏃堕棿</th><th>璇勪及缁撴灉</th><th>涓嬩竴姝?/th></tr></thead>
+            <tbody data-render-source="entities.samples" data-render-type="samples" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

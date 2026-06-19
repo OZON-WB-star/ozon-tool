@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鐢ㄦ埛涓績</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">鐢ㄦ埛涓績涓庡簵閾烘帴鍏?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍓嶅彴棣栭〉</span><small>Home</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鐢ㄦ埛涓績</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="account.html"><span>璐﹀彿姒傝</span></a>
+            <a class="nav-subitem" href="connect-store.html"><span>鎺ュ叆搴楅摵</span></a>
+            <a class="nav-subitem" href="analysis.html"><span>鍏嶈垂鍒嗘瀽</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>閫夊搧涓績</span><small>Selection</small></a>
+        <a class="nav-item" href="admin/index.html"><span>绠＄悊鍚庡彴</span><small>Admin</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鐢ㄦ埛涓績</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="connect-store.html">鎺ュ叆 Ozon 搴楅摵</a>
+          <a class="shell-pill gold" href="analysis.html">杩涘叆鍏嶈垂鍒嗘瀽</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="connect-store.html">缁х画鎺ュ叆搴楅摵</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鐢ㄦ埛涓績</span></div>
+            <h2>鐢ㄦ埛鐧诲綍鍚庣殑绗竴绔?/h2>
+            <p>杩欓噷鎵挎帴鍓嶅彴鐢ㄦ埛鑷繁鐨勮处鍙疯祫鏂欍€佹潈闄愮姸鎬併€佸凡缁戝畾搴楅摵鍜屼笅涓€姝ユ搷浣溿€傚悗闈㈡帴鍏ョ湡瀹炵櫥褰曠郴缁熷悗锛岃繖涓€椤靛氨鏄敤鎴风殑鏍稿績宸ヤ綔鍙板叆鍙ｄ箣涓€銆?/p>
+            <div class="feature-links">
+              <span class="badge">璐﹀彿璧勬枡</span>
+              <span class="badge">鍏嶈垂鍒嗘瀽</span>
+              <span class="badge">搴楅摵鎺ュ叆</span>
+              <span class="badge">鎺堟潈鐘舵€?/span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">褰撳墠濂楅</div><div class="v" data-bind="currentUser.planLabel"></div></div>
+            <div class="meta-card"><div class="k">宸茬粦瀹氬簵閾?/div><div class="v" data-bind="currentUser.storesBound"></div></div>
+            <div class="meta-card"><div class="k">鍒嗘瀽鏉冮檺</div><div class="v" data-bind="currentUser.analysisAccess"></div></div>
+            <div class="meta-card"><div class="k">涓嬩竴姝?/div><div class="v" data-bind="currentUser.nextStep"></div></div>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <h3>璐﹀彿璧勬枡</h3>
+                <span>鐢ㄦ埛鑷繁鍙鐨勫熀纭€璧勬枡鍖恒€?/span>
+              </div>
+            </div>
+            <div class="list-stack">
+              <div class="list-item"><div><strong>璐﹀彿鍚嶇О</strong><span data-bind="currentUser.name"></span></div><div><span data-bind="currentUser.roleLabel"></span></div></div>
+              <div class="list-item"><div><strong>鐧诲綍閭</strong><span data-bind="currentUser.email"></span></div><div><span data-bind="currentUser.verifiedLabel"></span></div></div>
+              <div class="list-item"><div><strong>涓昏惀鏂瑰悜</strong><span data-bind="currentUser.focus"></span></div><div><span>鍙皟鏁?/span></div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <h3>褰撳墠搴楅摵</h3>
+                <span>鐢ㄦ埛鑷繁鐨勫簵閾烘巿鏉冪姸鎬併€?/span>
+              </div>
+            </div>
+            <div class="list-stack" data-table-root>
+              <table>
+                <thead>
+                  <tr>
+                    <th>搴楅摵</th>
+                    <th>绔欑偣</th>
+                    <th>鏂瑰紡</th>
+                    <th>鐘舵€?/th>
+                    <th>鏈€杩戝悓姝?/th>
+                    <th>澶囨敞</th>
+                  </tr>
+                </thead>
+                <tbody data-render-source="entities.currentUserStores" data-render-type="current-stores" data-empty-cols="6"></tbody>
+              </table>
+              <div class="notice-strip">
+                <span>濡傛灉瑕佺户缁墿搴楋紝涓嬩竴姝ョ洿鎺ユ柊澧炴帴鍏ョ浜屼釜 Ozon 搴楅摵鍗冲彲銆?/span>
+                <a class="muted-link" href="connect-store.html">鍘绘帴鍏?/a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

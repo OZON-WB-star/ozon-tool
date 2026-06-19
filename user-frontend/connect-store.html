@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鎺ュ叆搴楅摵</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">鐢ㄦ埛涓績涓庡簵閾烘帴鍏?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>鍓嶅彴棣栭〉</span><small>Home</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鐢ㄦ埛涓績</span><span>鈻?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="account.html"><span>璐﹀彿姒傝</span></a>
+            <a class="nav-subitem active" href="connect-store.html"><span>鎺ュ叆搴楅摵</span></a>
+            <a class="nav-subitem" href="analysis.html"><span>鍏嶈垂鍒嗘瀽</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="stores.html"><span>搴楅摵妯″潡</span><small>Stores</small></a>
+        <a class="nav-item" href="admin/index.html"><span>绠＄悊鍚庡彴</span><small>Admin</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鎺ュ叆 Ozon 搴楅摵</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="store-auth.html">杩涘叆搴楅摵鎺堟潈妯″潡</a>
+          <a class="shell-pill gold" href="account.html">杩斿洖鐢ㄦ埛涓績</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鐢ㄦ埛涓績</span><span>/</span><span>鎺ュ叆搴楅摵</span></div>
+            <h2>鍓嶅彴鐢ㄦ埛鑷繁鎺ュ叆 Ozon 搴楅摵</h2>
+            <p>杩欎竴椤电幇鍦ㄥ凡缁忚兘鎶婅〃鍗曟彁浜ゅ埌鏈湴 FastAPI 鍚庣銆傚悗闈㈢户缁帴涓?Seller API 鐪熸鎺堟潈鏃讹紝鎴戜滑灏卞湪杩欎釜鍏ュ彛涓婄户缁ˉ榻愩€?/p>
+            <div class="feature-links">
+              <span class="badge">Seller API</span>
+              <span class="badge">Cookie 鍏煎</span>
+              <span class="badge">鐘舵€佹牎楠?/span>
+              <span class="badge">鍚屾瑙勫垯</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鎺ㄨ崘鏂瑰紡</div><div class="v">Seller API</div></div>
+            <div class="meta-card"><div class="k">鍏煎鏂瑰紡</div><div class="v">Cookie</div></div>
+            <div class="meta-card"><div class="k">閫傜敤鍦烘櫙</div><div class="v">鏂板 / 鎹㈢粦</div></div>
+            <div class="meta-card"><div class="k">涓嬩竴鍔ㄤ綔</div><div class="v" data-bind="currentUser.nextStep"></div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>搴楅摵鎺ュ叆琛ㄥ崟</h3>
+              <span>鎻愪氦鎴愬姛鍚庝細鎶婃柊搴楅摵鍐欏叆婕旂ず鍚庣锛屽苟鍥炲埌鐢ㄦ埛涓績鏌ョ湅鐘舵€併€?/span>
+            </div>
+          </div>
+          <form data-store-form>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="store-name">搴楅摵鍚嶇О</label>
+                <input id="store-name" name="name" type="text" placeholder="渚嬪锛歈IHA-GEILI" required>
+              </div>
+              <div class="field">
+                <label for="store-site">绔欑偣</label>
+                <select id="store-site" name="site">
+                  <option value="Ozon RU">Ozon RU</option>
+                  <option value="Ozon KZ">Ozon KZ</option>
+                  <option value="Ozon BY">Ozon BY</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="store-auth">鎺ュ叆鏂瑰紡</label>
+                <select id="store-auth" name="auth">
+                  <option value="api">Seller API</option>
+                  <option value="cookie">Cookie</option>
+                  <option value="hybrid">娣峰悎妯″紡</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="store-client-id">Client ID</label>
+                <input id="store-client-id" name="client_id" type="text" placeholder="璇疯緭鍏?Ozon Client ID">
+              </div>
+              <div class="field">
+                <label for="store-api-key">API Key / 瀵嗛挜</label>
+                <input id="store-api-key" name="api_key" type="text" placeholder="璇疯緭鍏?API Key">
+              </div>
+              <div class="field">
+                <label for="store-email">璐熻矗浜洪偖绠?/label>
+                <input id="store-email" name="owner_email" type="email" placeholder="璇疯緭鍏ヨ仈绯婚偖绠? required>
+              </div>
+            </div>
+            <div class="field" style="margin-top:14px;">
+              <label for="store-note">澶囨敞</label>
+              <textarea id="store-note" name="note" placeholder="鍙～鍐欏簵閾虹敤閫斻€佹巿鏉冭鏄庛€侀渶瑕佸悓姝ョ殑妯″潡绛変俊鎭?></textarea>
+            </div>
+            <div class="notice-strip" data-form-message style="display:none;margin-top:14px;"></div>
+            <div class="form-actions" style="margin-top:18px;">
+              <button class="button primary" type="submit">鎻愪氦骞剁户缁厤缃?/button>
+              <a class="button ghost" href="store-auth.html">鏌ョ湅瀹屾暣鎺堟潈椤?/a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/api.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/portal.js"></script>
+</body>
+</html>
+
+
+

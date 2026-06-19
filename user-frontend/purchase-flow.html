@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 閲囪喘閾捐矾</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙ERP</div><div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="product-inventory.html"><span>搴撳瓨</span><small>Inventory</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>璐ф簮</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="supply.html"><span>璐ф簮涓績</span></a>
+            <a class="nav-subitem" href="sample-tracking.html"><span>鏍峰搧璺熻繘</span></a>
+            <a class="nav-subitem active" href="purchase-flow.html"><span>閲囪喘閾捐矾</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">閲囪喘閾捐矾</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="orders.html">璁㈠崟琛ヨ揣鍏ュ彛</a><a class="shell-pill gold" href="product-inventory.html">鏌ョ湅搴撳瓨棰勮</a></div>
+      </div>
+      <section class="content">
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>璐ф簮</span><span>/</span><span>閲囪喘閾捐矾</span></div><h2>閲囪喘閾捐矾鎶婇€夊搧銆佹牱鍝佸拰琛ヨ揣涓茶捣鏉?/h2><p>杩欓噷鍏堝仛閲囪喘鑺傜偣鐪嬫澘锛屾柟渚夸互鍚庢妸鏍峰搧閫氳繃鍟嗗搧鐩存帴杞垚閲囪喘璁″垝銆佽ˉ璐у崟鍜屽湪閫旇窡韪€?/p><div class="feature-links"><span class="badge">寰呬笅鍗?/span><span class="badge">宸蹭粯娆?/span><span class="badge">鐢熶骇涓?/span><span class="badge">鍦ㄩ€?/span></div></div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">寰呬笅鍗?/div><div class="v" data-bind="supply.purchasePending" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鐢熶骇涓?/div><div class="v" data-bind="supply.purchaseProduction" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鍦ㄩ€旈噰璐?/div><div class="v" data-bind="supply.purchaseShipping" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">閫炬湡椋庨櫓</div><div class="v" data-bind="supply.purchaseRisk" data-bind-countup></div></div>
+          </div>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>閲囪喘杩涘害</h3><span>鍚庨潰鍙户缁帴鏀粯銆佺墿娴併€佸叆浠撳拰璐ㄦ銆?/span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储閲囪喘鍗曘€佸晢鍝併€佸娉? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="pending">寰呬笅鍗?/option>
+              <option value="production">鐢熶骇涓?/option>
+              <option value="shipping">鍦ㄩ€?/option>
+              <option value="risk">閫炬湡椋庨櫓</option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>閲囪喘鍗?/th><th>鍟嗗搧</th><th>渚涘簲鍟?/th><th>鏁伴噺</th><th>鐘舵€?/th><th>棰勮瀹屾垚</th><th>澶囨敞</th></tr></thead>
+            <tbody data-render-source="entities.purchases" data-render-type="purchases" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鍟嗗搧</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鍟嗗搧</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="products.html"><span>鍟嗗搧涓績</span></a>
+            <a class="nav-subitem" href="product-online.html"><span>鍦ㄧ嚎鍟嗗搧</span></a>
+            <a class="nav-subitem" href="product-drafts.html"><span>鍟嗗搧鑽夌</span></a>
+            <a class="nav-subitem" href="product-inventory.html"><span>搴撳瓨绠＄悊</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鉄?/div>
+          <div class="shell-pill">鍟嗗搧涓績</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="product-online.html">鍦ㄧ嚎鍟嗗搧</a>
+          <a class="shell-pill gold" href="product-drafts.html">鏂板缓鑽夌</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="product-online.html">杩涘叆鍦ㄧ嚎鍟嗗搧</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鍟嗗搧</span></div>
+            <h2>鍟嗗搧妯″潡</h2>
+            <p>鍟嗗搧妯″潡鐜板湪鍏堟壙鎺ユ渶甯哥敤鐨勫悗鍙拌兘鍔涳細鍦ㄧ嚎鍟嗗搧绠＄悊銆佽崏绋垮埌涓婃灦銆佸簱瀛橀璀︿笌琛ヨ揣銆傜増寮忓凡缁忓紑濮嬬粺涓€鎴愰椤甸偅濂楄瑙夎瑷€锛屽悗闈細缁х画閾哄埌鏇村鍐呴〉銆?/p>
+            <div class="feature-links">
+              <span class="badge">鍦ㄧ嚎鍟嗗搧</span>
+              <span class="badge">鍟嗗搧鑽夌</span>
+              <span class="badge">搴撳瓨绠＄悊</span>
+              <span class="badge">涓婃灦娴佺▼</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鍦ㄧ嚎鍟嗗搧</div><div class="v" data-bind="products.online" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">浣庡簱瀛樺晢鍝?/div><div class="v" data-bind="products.lowStock" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鍔ㄩ攢鍟嗗搧</div><div class="v" data-bind="products.active" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呬紭鍖栧晢鍝?/div><div class="v" data-bind="products.optimize" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鍟嗗搧瀛愭ā鍧?/h3>
+              <span>鍏ュ彛宸茬粡涓茶捣鏉ワ紝鍚庨潰鍙互缁х画寰€缁嗚妭鍜岃仈鍔ㄤ笂琛ャ€?/span>
+            </div>
+          </div>
+          <div class="card-grid">
+            <a class="card" href="product-online.html"><h4>鍦ㄧ嚎鍟嗗搧</h4><p>鏌ョ湅姝ｅ湪鍞崠鍟嗗搧銆佷环鏍笺€佸簱瀛樸€佽繎7鏃ヨ鍗曚笌杩愯惀寤鸿銆?/p></a>
+            <a class="card" href="product-drafts.html"><h4>鍟嗗搧鑽夌</h4><p>鎵挎帴閫夊搧缁撴灉涓庨噰闆嗙粨鏋滐紝闆嗕腑绠＄悊寰呰ˉ鍥俱€佸緟琛ュ睘鎬с€佸緟瀹氫环鍜屽緟鍙戝竷鍐呭銆?/p></a>
+            <a class="card" href="product-inventory.html"><h4>搴撳瓨绠＄悊</h4><p>鍋氫綆搴撳瓨棰勮銆佸湪閫斿簱瀛樸€佸懆杞ぉ鏁板拰寤鸿琛ヨ揣閲忋€?/p></a>
+            <a class="card" href="product-publish-workflow.html"><h4>涓婃灦娴佺▼</h4><p>鎶婂€欓€夊晢鍝併€佽崏绋裤€佸畾浠枫€佸浘鐗囧拰涓婃灦鍔ㄤ綔涓叉垚涓€鏉″畬鏁村伐浣滄祦銆?/p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

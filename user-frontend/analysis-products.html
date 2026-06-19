@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鍟嗗搧琛ㄧ幇鍒嗘瀽</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 鏅鸿兘杩愯惀鍚庡彴</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Dashboard</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item active" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鍒嗘瀽</span><span>/</span><span>鍟嗗搧琛ㄧ幇</span></div>
+          <h1 class="page-title">鍟嗗搧琛ㄧ幇鍒嗘瀽</h1>
+        </div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="products.html">鍘诲晢鍝侀〉澶勭悊</a>
+        </div>
+        <div class="hero">
+          <div>
+            <h2>鍏堟妸鍟嗗搧琛ㄧ幇鐪嬫竻妤氾紝鍐嶅喅瀹氳ˉ璐у拰浼樺寲</h2>
+            <p>杩欎竴椤电幇鍦ㄧ洿鎺ュ悆鍚庣鍒嗘瀽鏁版嵁锛屽悗闈㈢户缁帴鐪熷疄 Ozon 鏁版嵁鏃讹紝鍙互鎶婃洕鍏夈€佺偣鍑汇€佽浆鍖栥€佸簱瀛橀闄╅兘娌跨敤鍚屼竴濂楃粨鏋勩€?/p>
+            <div class="hero-badges">
+              <span class="badge">鏇濆厜</span>
+              <span class="badge">鐐瑰嚮</span>
+              <span class="badge">杞寲</span>
+              <span class="badge">搴撳瓨椋庨櫓</span>
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card"><div class="label">鍊欓€夊晢鍝?/div><div class="value" data-bind="selection.candidateProducts" data-bind-countup></div><div class="up">宸茶繘鍏ュ垎鏋愭睜</div></div>
+            <div class="metric-card"><div class="label">浠婃棩璁㈠崟</div><div class="value" data-bind="orders.today" data-bind-countup></div><div class="up">缁熶竴鏁版嵁灞?/div></div>
+            <div class="metric-card"><div class="label">寰呭鐞嗚鍗?/div><div class="value" data-bind="orders.pending" data-bind-countup></div><div class="mid">寤鸿鑱斿姩璁㈠崟椤?/div></div>
+            <div class="metric-card"><div class="label">搴楅摵鍋ュ悍搴?/div><div class="value" data-bind="stores.avgHealth" data-bind-countup></div><div class="up">鏁翠綋绋冲畾</div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鍟嗗搧琛ㄧ幇鍒楄〃</h3>
+              <span>浠庡垎鏋愰〉鐩存帴鐪嬪埌椋庨櫓鍜屽缓璁紝鍚庨潰鍙户缁仈鍔ㄥ晢鍝侀〉澶勭悊銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鍟嗗搧銆佸缓璁姩浣? data-table-search>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>鍟嗗搧</th>
+                <th>鏇濆厜</th>
+                <th>鐐瑰嚮鐜?/th>
+                <th>杞寲鐜?/th>
+                <th>杩?7 鏃ラ攢閲?/th>
+                <th>椋庨櫓</th>
+                <th>寤鸿</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.analysisProducts" data-render-type="analysis-products" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

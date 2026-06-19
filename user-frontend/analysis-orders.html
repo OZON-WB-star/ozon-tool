@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 璁㈠崟缁撴瀯鍒嗘瀽</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 鏅鸿兘杩愯惀鍚庡彴</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Dashboard</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item active" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鍒嗘瀽</span><span>/</span><span>璁㈠崟缁撴瀯</span></div>
+          <h1 class="page-title">璁㈠崟缁撴瀯鍒嗘瀽</h1>
+        </div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="orders.html">鍘昏鍗曟ā鍧楀鐞?/a>
+        </div>
+        <div class="hero">
+          <div>
+            <h2>鎶婅鍗曠粨鏋勭湅娓呮锛屽彂璐ц妭濂忓氨浼氭洿绋?/h2>
+            <p>鐜板湪寰呭彂璐с€佽繍杈撲腑銆佸彇娑堝崟銆佸紓甯稿崟閮芥潵鑷悓涓€濂楀垎鏋愭帴鍙ｏ紝鍚庨潰鍙鎺ョ湡鏁版嵁锛屽氨鑳界户缁線涓嬫墿鍛婅鍜屽綊鍥犮€?/p>
+            <div class="hero-badges">
+              <span class="badge">寰呭彂璐?/span>
+              <span class="badge">杩愯緭涓?/span>
+              <span class="badge">鍙栨秷鍗?/span>
+              <span class="badge">寮傚父鍗?/span>
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card"><div class="label">浠婃棩璁㈠崟</div><div class="value" data-bind="orders.today" data-bind-countup></div><div class="up">缁熶竴鍒嗘瀽鍏ュ彛</div></div>
+            <div class="metric-card"><div class="label">寰呭鐞?/div><div class="value" data-bind="orders.pending" data-bind-countup></div><div class="mid">闇€瀹夋帓娉㈡</div></div>
+            <div class="metric-card"><div class="label">寮傚父鍗?/div><div class="value" data-bind="orders.exceptions" data-bind-countup></div><div class="down">寤鸿鎺掓煡</div></div>
+            <div class="metric-card"><div class="label">宸插彂璐?/div><div class="value" data-bind="orders.shipped" data-bind-countup></div><div class="up">杩愯緭閾捐矾绋冲畾</div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>璁㈠崟缁撴瀯鏄庣粏</h3>
+              <span>鍚庨潰鍙互缁х画浠庤繖閲岃烦鍥炶鍗曞垪琛ㄥ仛瀹為檯澶勭悊銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储缁村害銆佽秼鍔裤€佸缓璁? data-table-search>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>缁村害</th>
+                <th>鏁伴噺</th>
+                <th>鍗犳瘮</th>
+                <th>瓒嬪娍</th>
+                <th>澶勭悊寤鸿</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.analysisOrders" data-render-type="analysis-orders" data-empty-cols="5"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

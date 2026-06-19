@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP绠＄悊鍙?- 鎬昏</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙绠＄悊鍙?/div>
+          <div class="brand-sub">鐢ㄦ埛銆佸簵閾轰笌鏁版嵁鏈嶅姟鍚庡彴</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item active" href="index.html"><span>鍚庡彴姒傝</span><small>Admin</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鐢ㄦ埛绠＄悊</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="users.html"><span>鐢ㄦ埛鍒楄〃</span></a>
+            <a class="nav-subitem" href="plans.html"><span>濂楅鏉冮檺</span></a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>搴楅摵绠＄悊</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="stores.html"><span>鎺堟潈搴楅摵</span></a>
+            <a class="nav-subitem" href="sync.html"><span>鍚屾浠诲姟</span></a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>鏁版嵁鏈嶅姟</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="data-services.html"><span>鏁版嵁鎺ュ彛</span></a>
+            <a class="nav-subitem" href="jobs.html"><span>浠诲姟闃熷垪</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="../index.html"><span>杩斿洖鍓嶅彴</span><small>Frontend</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">鍚庡彴姒傝</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="../index.html">鍓嶅彴鍏ュ彛</a>
+          <a class="shell-pill gold" href="users.html">杩涘叆鐢ㄦ埛绠＄悊</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="../account.html">鏌ョ湅鍓嶅彴鐢ㄦ埛涓績</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP绠＄悊鍙?/span><span>/</span><span>姒傝</span></div>
+            <h2>缁欎綘绠＄悊鏁翠釜骞冲彴鐨勫悗鍙伴鏋?/h2>
+            <p>杩欓儴鍒嗕笓闂ㄧ粰浣犺嚜宸变娇鐢紝鍜屽墠鍙扮敤鎴烽〉闈㈠垎寮€銆傚悗闈㈠彲浠ラ€愭鎺ュ叆鐢ㄦ埛娉ㄥ唽瀹℃牳銆佸簵閾烘巿鏉冨璁°€佹暟鎹湇鍔″紑鍏炽€佸椁愰檺鍒跺拰浠诲姟鐩戞帶銆?/p>
+            <div class="feature-links">
+              <span class="badge">鐢ㄦ埛绠＄悊</span>
+              <span class="badge">搴楅摵鎺堟潈</span>
+              <span class="badge">鏁版嵁鏈嶅姟</span>
+              <span class="badge">浠诲姟鐩戞帶</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">娉ㄥ唽鐢ㄦ埛</div><div class="v" data-bind="admin.registeredUsers"></div></div>
+            <div class="meta-card"><div class="k">宸叉帴搴楅摵</div><div class="v" data-bind="admin.connectedStores"></div></div>
+            <div class="meta-card"><div class="k">娲昏穬鍚屾浠诲姟</div><div class="v" data-bind="admin.activeSyncJobs"></div></div>
+            <div class="meta-card"><div class="k">鍏嶈垂鍒嗘瀽鐢ㄦ埛</div><div class="v" data-bind="admin.freeAnalysisUsers"></div></div>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <a class="card" href="users.html">
+            <h4>鐢ㄦ埛鍒楄〃</h4>
+            <p>绠＄悊鍓嶅彴娉ㄥ唽鐢ㄦ埛銆佺櫥褰曠姸鎬併€佹渶鍚庢椿璺冩椂闂村拰璐﹀彿鏉冮檺銆?/p>
+          </a>
+          <a class="card" href="stores.html">
+            <h4>搴楅摵鎺堟潈</h4>
+            <p>鏌ョ湅姣忎釜鐢ㄦ埛缁戝畾鐨?Ozon 搴楅摵銆佹巿鏉冩柟寮忓拰鍚屾鍋ュ悍搴︺€?/p>
+          </a>
+          <a class="card" href="data-services.html">
+            <h4>鏁版嵁鏈嶅姟</h4>
+            <p>闆嗕腑绠＄悊閫夊搧銆佸垎鏋愩€佷环鏍笺€佺被鐩拰鐗╂祦绛夊悗鍙版暟鎹湇鍔¤兘鍔涖€?/p>
+          </a>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>鍚庡彴寤鸿璺嚎</h3>
+              <span>鐜板湪宸茬粡鎶婂墠鍚庡彴鍒嗗眰鐨勭涓€鐗堢粨鏋勬惌濂戒簡銆?/span>
+            </div>
+          </div>
+          <div class="next-grid">
+            <div class="next-card"><strong>鐢ㄦ埛浣撶郴</strong><p>琛ユ敞鍐屻€佺櫥褰曘€佹壘鍥炲瘑鐮併€佸悗鍙扮鐢ㄥ拰瑙掕壊鍒嗛厤銆?/p></div>
+            <div class="next-card"><strong>鎺堟潈浣撶郴</strong><p>鎺?Ozon API 鎺堟潈璁板綍銆佸簵閾虹粦瀹氬叧绯诲拰鍚屾瀹¤鏃ュ織銆?/p></div>
+            <div class="next-card"><strong>鏁版嵁鏈嶅姟</strong><p>鎶婇€夊搧銆佸垎鏋愩€佹椿鍔ㄣ€佺墿娴佺瓑鑳藉姏娌夊埌鍚庡彴鏈嶅姟灞傜粺涓€渚涚粰銆?/p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/mock-data.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 渚涘簲鍟嗗垪琛?/title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>璐ф簮</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="supply.html"><span>璐ф簮涓績</span></a>
+            <a class="nav-subitem active" href="supplier-list.html"><span>渚涘簲鍟嗗垪琛?/span></a>
+            <a class="nav-subitem" href="sample-tracking.html"><span>鏍峰搧璺熻繘</span></a>
+            <a class="nav-subitem" href="purchase-flow.html"><span>閲囪喘娴佺▼</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">渚涘簲鍟嗗垪琛?/div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="sample-tracking.html">鏌ョ湅鏍峰搧璺熻繘</a>
+          <a class="shell-pill gold" href="purchase-flow.html">杩涘叆閲囪喘閾捐矾</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>璐ф簮</span><span>/</span><span>渚涘簲鍟嗗垪琛?/span></div>
+            <h2>鍏堟妸渚涘簲鍟嗗簳琛ㄥ仛鎵庡疄</h2>
+            <p>璐ф簮妯″潡鏈€鍩虹鐨勪竴椤靛氨鏄緵搴斿晢鍒楄〃銆傜幇鍦ㄥ凡缁忚ˉ涓婃悳绱€佺被鐩拰璇勫垎绛涢€夛紝骞朵笖鏀规垚浜嗗叡浜暟鎹覆鏌擄紝鍚庨潰鍙互缁х画寰€ 1688 鏉ユ簮銆佽浠疯褰曘€佹墦鏍疯窡杩涘拰璐ㄦ鑱斿姩鎵╁睍銆?/p>
+            <div class="feature-links">
+              <span class="badge">鎶ヤ环</span>
+              <span class="badge">璧疯閲?/span>
+              <span class="badge">浜ゆ湡</span>
+              <span class="badge">鍚堜綔璇勫垎</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">渚涘簲鍟嗘暟</div><div class="v" data-bind="supply.suppliers" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鏍稿績渚涘簲鍟?/div><div class="v" data-bind="supply.core" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭鏍告姤浠?/div><div class="v" data-bind="supply.quotes" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">鏍峰搧涓?/div><div class="v" data-bind="supply.samples" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>渚涘簲鍟嗘竻鍗?/h3>
+              <span>鏀寔鎸夌被鐩拰璇勫垎绛涢€夛紝涓嬩竴杞彲浠ョ户缁姞璇环璁板綍涓庡悎浣滃巻鍙层€?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储渚涘簲鍟嗐€佺被鐩€佸悎浣滃娉? data-table-search>
+            <select data-table-filter="category">
+              <option value="all">鍏ㄩ儴绫荤洰</option>
+              <option value="pet">瀹犵墿娓呮磥</option>
+              <option value="home">瀹跺眳鏀剁撼</option>
+              <option value="outdoor">鎴峰闇茶惀</option>
+              <option value="beauty">缇庡鏀剁撼</option>
+            </select>
+            <select data-table-filter="grade">
+              <option value="all">鍏ㄩ儴璇勫垎</option>
+              <option value="a">A</option>
+              <option value="bplus">B+</option>
+              <option value="b">B</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>渚涘簲鍟?/th>
+                <th>涓昏惀绫荤洰</th>
+                <th>璧疯閲?/th>
+                <th>鏈€杩戞姤浠?/th>
+                <th>浜ゆ湡</th>
+                <th>璇勫垎</th>
+                <th>澶囨敞</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.suppliers" data-render-type="suppliers" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

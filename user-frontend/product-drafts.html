@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 鍟嗗搧鑽夌</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">澶ч箙ERP</div><div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>鍟嗗搧</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="products.html"><span>鍟嗗搧涓績</span></a>
+            <a class="nav-subitem" href="product-online.html"><span>鍦ㄧ嚎鍟嗗搧</span></a>
+            <a class="nav-subitem active" href="product-drafts.html"><span>鍟嗗搧鑽夌</span></a>
+            <a class="nav-subitem" href="product-inventory.html"><span>搴撳瓨绠＄悊</span></a>
+            <a class="nav-subitem" href="product-publish-workflow.html"><span>涓婃灦娴佺▼</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>淇冮攢</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon">鈽?/div><div class="shell-icon">鈫?/div><div class="shell-pill">鍟嗗搧鑽夌</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="selection-center.html">鏉ヨ嚜閫夊搧姹?/a><a class="shell-pill gold" href="product-publish-workflow.html">杩涘叆涓婃灦娴佺▼</a></div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>褰撳墠浣跨敤婕旂ず鏁版嵁</strong>锛屾帴鍙ｅ湴鍧€锛?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="product-publish-workflow.html">缁х画涓婃灦娴佺▼</a>
+        </div>
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鍟嗗搧</span><span>/</span><span>鍟嗗搧鑽夌</span></div><h2>璁╅€夊搧缁撴灉椤虹潃杩涘叆涓婃灦娴佺▼</h2><p>鑽夌姹犺繛鎺ラ€夊搧涓績鍜屽湪绾垮晢鍝侀〉锛岀粺涓€绠＄悊寰呰ˉ鍥俱€佸緟琛ュ睘鎬с€佸緟瀹氫环鍜屽緟鍙戝竷鍟嗗搧銆傚悗闈㈠彲浠ョ户缁帴鍥剧墖澶勭悊銆佹枃妗堟ā鏉垮拰鎵归噺鍙戝竷銆?/p><div class="feature-links"><span class="badge">寰呰ˉ鍥?/span><span class="badge">寰呰ˉ灞炴€?/span><span class="badge">寰呭畾浠?/span><span class="badge">寰呭彂甯?/span></div></div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">鑽夌鎬绘暟</div><div class="v" data-bind="products.drafts" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呰ˉ鍥?/div><div class="v" data-bind="products.draftsImages" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭畾浠?/div><div class="v" data-bind="products.draftsPricing" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭彂甯?/div><div class="v" data-bind="products.readyToPublish" data-bind-countup></div></div>
+          </div>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>鑽夌姹?/h3><span>鍚庨潰鍙互缁х画鍦ㄨ繖閲屾帴鍏ュ浘鏂囩敓鎴愩€佸睘鎬цˉ鍏ㄥ拰鍙戝竷妯℃澘銆?/span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储鑽夌銆佹潵婧愩€佷笅涓€姝? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="image">寰呰ˉ鍥?/option>
+              <option value="attribute">寰呰ˉ灞炴€?/option>
+              <option value="pricing">寰呭畾浠?/option>
+              <option value="ready">寰呭彂甯?/option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>鑽夌鍟嗗搧</th><th>鏉ユ簮</th><th>褰撳墠鐘舵€?/th><th>缂哄け椤?/th><th>寤鸿鍞环</th><th>涓嬩竴姝?/th></tr></thead>
+            <tbody data-render-source="entities.draftProducts" data-render-type="draft-products" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

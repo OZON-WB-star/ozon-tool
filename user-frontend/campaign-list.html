@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澶ч箙ERP - 娲诲姩鍒楄〃</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
+          <div class="brand-sub">Ozon 閫夊搧涓庤繍钀ュ钩鍙?/div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>姒傝</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>鍟嗗搧</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>閫夊搧</span><small>Selection</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>淇冮攢</span><span>鈱?/span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="campaigns.html"><span>淇冮攢涓績</span></a>
+            <a class="nav-subitem active" href="campaign-list.html"><span>娲诲姩鍒楄〃</span></a>
+            <a class="nav-subitem" href="campaign-plan.html"><span>淇冮攢璁″垝</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="orders.html"><span>璁㈠崟</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>搴楅摵</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>鍒嗘瀽</span><span class="free-pill">鍏嶈垂</span></a>
+        <a class="nav-item" href="supply.html"><span>璐ф簮</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>宸ュ叿</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon">鈽?/div>
+          <div class="shell-icon">鈫?/div>
+          <div class="shell-pill">娲诲姩鍒楄〃</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="campaign-plan.html">鏌ョ湅淇冮攢璁″垝</a>
+          <a class="shell-pill gold" href="analysis-products.html">鏁堟灉鍏宠仈鍒嗘瀽</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>淇冮攢</span><span>/</span><span>娲诲姩鍒楄〃</span></div>
+            <h2>娲诲姩椤靛厛鍋氭竻鍗曞拰鐘舵€佺鐞?/h2>
+            <p>淇冮攢妯″潡宸茬粡鍏峰婕旂ず浜や簰锛屽綋鍓嶆椿鍔ㄥ垪琛ㄤ篃鏀规垚浜嗗叡浜暟鎹覆鏌撱€傚悗闈㈡帴 Ozon 娲诲姩鎶ュ悕鏁版嵁鎴栬€呮垜浠嚜宸辩殑淇冮攢绛栫暐涓績鏃讹紝鍙互鐩存帴缁х画寰€涓嬫墿灞曘€?/p>
+            <div class="feature-links">
+              <span class="badge">鎶ュ悕涓?/span>
+              <span class="badge">杩涜涓?/span>
+              <span class="badge">寰呭鐩?/span>
+              <span class="badge">寰呮姤鍚?/span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">娲诲姩鎬绘暟</div><div class="v" data-bind="campaigns.total" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">杩涜涓?/div><div class="v" data-bind="campaigns.running" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呮姤鍚?/div><div class="v" data-bind="campaigns.pending" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">寰呭鐩?/div><div class="v" data-bind="campaigns.review" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>娲诲姩娓呭崟</h3>
+              <span>鏀寔鎸夊簵閾轰笌娲诲姩鐘舵€佺瓫閫夛紝鍚庨潰鍙互缁х画琛ユ姤鍚嶅叆鍙ｄ笌娲诲姩鏁堟灉娌夋穩銆?/span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="鎼滅储娲诲姩鍚嶃€佸簵閾恒€佸缓璁? data-table-search>
+            <select data-table-filter="store">
+              <option value="all">鍏ㄩ儴搴楅摵</option>
+              <option value="store_qiha">QIHA-GEILI</option>
+              <option value="store_pethome">PetHome Lab</option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">鍏ㄩ儴鐘舵€?/option>
+              <option value="running">杩涜涓?/option>
+              <option value="applying">鎶ュ悕涓?/option>
+              <option value="review">寰呭鐩?/option>
+              <option value="pending">寰呮姤鍚?/option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>娲诲姩鍚嶇О</th>
+                <th>搴楅摵</th>
+                <th>鏃堕棿</th>
+                <th>鍙備笌鍟嗗搧</th>
+                <th>鐘舵€?/th>
+                <th>寤鸿</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.campaigns" data-render-type="campaigns" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/ozon-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+
