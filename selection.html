@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 选品</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">大鹅ERP</div>
+          <div class="brand-sub">Ozon 选品与运营平</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>商品</span><small>Products</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>选品</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="selection.html"><span>选品中心</span></a>
+            <a class="nav-subitem" href="selection-center.html"><span>候选�商</span></a>
+            <a class="nav-subitem" href="market-analysis.html"><span>大盘总览</span></a>
+            <a class="nav-subitem" href="industry-analysis.html"><span>类目分析</span></a>
+            <a class="nav-subitem" href="keyword-analysis.html"><span>关键词分</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="campaigns.html"><span>促销</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>订单</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>店铺</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>分析</span><span class="free-pill">免费</span></a>
+        <a class="nav-item" href="supply.html"><span>货源</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>工具</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-pill">选品中心</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="selection-center.html">候选�商品池</a>
+          <a class="shell-pill gold" href="pricing-tool.html">产品定价</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>当前使用演示数据</strong>，接口地坢��?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="selection-center.html">查看候选�商品池</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>选品</span></div>
+            <h2>选品模块</h2>
+            <p>选品模块已经成套，后面可以直接接成真实业务链路��这里集中承接市场��行业��商品池�关键词、定价和同行比价等核心��品能力</p>
+            <div class="feature-links">
+              <span class="badge">市场</span>
+              <span class="badge">行业</span>
+              <span class="badge">商品</span>
+              <span class="badge">关键</span>
+              <span class="badge">定价</span>
+              <span class="badge">比价</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">机会类目</div><div class="v" data-bind="selection.hotCategories" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">跟踪关键</div><div class="v" data-bind="selection.trackedKeywords" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">候选�商</div><div class="v" data-bind="selection.candidateProducts" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">本周机会</div><div class="v" data-bind="selection.opportunities" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>高优先类目机</h3>
+              <span>把最值得先看的类目放在��页，避免用户一上来无从下手</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="搜索类目、趋势��建�? data-table-search>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>类目</th>
+                <th>霢</th>
+                <th>竞争</th>
+                <th>毛利</th>
+                <th>趋势</th>
+                <th>建议</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.selectionCategories" data-render-type="selection-categories" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>子页面导</h3>
+              <span>按顺序浏览最顺</span>
+            </div>
+          </div>
+          <div class="card-grid">
+            <a class="card" href="selection-center.html"><h4>候选�商品池</h4><p>集中看��品候选���评分析�毛利和来源理由</p></a>
+            <a class="card" href="market-analysis.html"><h4>大盘市场分析</h4><p>先看市场热度、机会类目和趋势波动</p></a>
+            <a class="card" href="industry-analysis.html"><h4>类目分析</h4><p>看类目结构��竞争密度和适合切入的打法</p></a>
+            <a class="card" href="product-analysis.html"><h4>商品分析</h4><p>看单品价格��销量��评分析�风险和测款优先级</p></a>
+            <a class="card" href="keyword-analysis.html"><h4>关键词分</h4><p>看流量词、长尾词和更适合起量的关键词</p></a>
+            <a class="card" href="pricing-tool.html"><h4>产品定价</h4><p>把利润��佣金��汇率��物流和税费算清楚</p></a>
+            <a class="card" href="competitor-pricing.html"><h4>同行比价</h4><p>和竞品放在一起正面对比价格带和策略</p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

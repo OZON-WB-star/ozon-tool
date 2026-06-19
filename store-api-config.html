@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - API / Cookie 配置</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div><div style="font-size:18px;font-weight:700;">大鹅ERP</div><div class="brand-sub">Ozon 智能运营后台</div></div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Dashboard</small></a>
+        <a class="nav-item active" href="stores.html"><span>店铺</span><small>Stores</small></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>店铺</span><span>/</span><span>API / Cookie 配置</span></div>
+          <h1 class="page-title">API / Cookie 配置</h1>
+        </div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>当前使用演示数据</strong>，接口地坢��?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="store-list.html">回到店铺列表</a>
+        </div>
+        <div class="hero">
+          <div>
+            <h2>把店铺接入参数统丢�放在这里管理</h2>
+            <p>这页现在会直接读取后端配置清单��后面继续接真实加密存储、健康检测和授权日志时，可以沿用同一套表结构</p>
+            <div class="hero-badges"><span class="badge">Client ID</span><span class="badge">API Key</span><span class="badge">Cookie</span><span class="badge">健康棢</span></div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card"><div class="label">店铺数量</div><div class="value" data-bind="stores.total" data-bind-countup></div><div class="up">已接</div></div>
+            <div class="metric-card"><div class="label">API 模式</div><div class="value" data-bind="stores.api" data-bind-countup></div><div class="up">推荐方式</div></div>
+            <div class="metric-card"><div class="label">Cookie 模式</div><div class="value" data-bind="stores.cookie" data-bind-countup></div><div class="mid">兼容保留</div></div>
+            <div class="metric-card"><div class="label">异常店铺</div><div class="value" data-bind="stores.error" data-bind-countup></div><div class="down">霢�排查</div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>配置清单</h3>
+              <span>后面可继续扩成密钥轮捃6�9��操作日志和自动棢�测</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="搜索店铺、配置项、说�? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">全部状</option>
+              <option value="normal">正常</option>
+              <option value="warn">待优</option>
+              <option value="error">异常</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>店铺</th>
+                <th>配置</th>
+                <th>渠道</th>
+                <th>状</th>
+                <th>朢�近更</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.storeConfigs" data-render-type="store-configs" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

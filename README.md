@@ -1,67 +1,38 @@
-# OZON + 1688 Web Workbench
+# 大鹅ERP - GitHub Pages 静态部署版
 
-这是桌面版 `OZON + 1688` 工具的本地网页版本。
+这个目录已经把原来的 `frontend/` 内容提到仓库根目录，适合直接上传到 GitHub Pages、Netlify、Vercel 静态站点。
 
-当前版本已经接入：
+## 为什么你原来上传后打不开
 
-- 自动定位 `F:\OZON-PY\OZON_1688独立软件_final` 下的最新 OZON 导出表
-- 检测 `http://127.0.0.1:9222` 的浏览器调试连接
-- 运行 1688 搜图找货
-- 停止当前 1688 任务
-- 生成 `*_erp_ready.xlsx`
-- 下载 1688 结果表和 ERP 上品表
+1. 原包的首页在 `frontend/index.html`，GitHub Pages 默认读取仓库根目录的 `index.html`。
+2. `frontend/assets/config.js` 指向 `http://127.0.0.1:8010`，这是你自己电脑本地后端地址，线上访问不到。
+3. 部分 HTML 中文是乱码，本版已做编码修复。
+4. GitHub Pages 只能部署静态网页，不能运行 `backend/` 里的 FastAPI Python 后端。
 
-## 默认目录
+## GitHub Pages 使用方法
 
-程序会优先把下面这个目录当成主项目目录：
+把本目录内所有文件上传到 GitHub 仓库根目录，不要再套一层 `frontend` 文件夹。
 
-```text
-F:\OZON-PY\OZON_1688独立软件_final
+然后进入：
+
+Settings → Pages → Build and deployment → Source 选择 `Deploy from a branch` → Branch 选择 `main` 和 `/root` → Save。
+
+等待 1-3 分钟后访问 GitHub Pages 给你的地址。
+
+## 当前模式
+
+当前为静态演示模式：
+
+```js
+window.DAE_STATIC_DEMO_MODE = true;
+window.DAE_API_BASE_URL = "";
 ```
 
-新生成的文件默认写入：
+也就是说，页面会使用 `assets/mock-data.js` 里的演示数据，不会连接后端。
 
-```text
-F:\OZON-PY\OZON_1688独立软件_final\EXPORT
+如果以后你把 FastAPI 后端部署到服务器，例如 `https://api.your-domain.com`，再把 `assets/config.js` 改成：
+
+```js
+window.DAE_STATIC_DEMO_MODE = false;
+window.DAE_API_BASE_URL = "https://api.your-domain.com";
 ```
-
-网页运行期文件会写入：
-
-```text
-F:\OZON-PY\OZON_1688独立软件_final\WEB_RUNTIME
-```
-
-## 启动
-
-```bat
-cd /d C:\Users\admin\Documents\Codex\2026-05-18\1688-excel\web_ozon_1688
-python launch.py
-```
-
-然后打开：
-
-```text
-http://127.0.0.1:8000
-```
-
-## 依赖
-
-```bat
-pip install -r requirements.txt
-playwright install chromium
-```
-
-## 当前建议流程
-
-1. 先在 OZON 侧完成采集并导出 Excel。
-2. 打开网页后点击“刷新最新导出”。
-3. 确认 Chrome 或 Edge 已经登录 1688，并且已开启调试端口。
-4. 点击“检测 1688 浏览器”。
-5. 点击“运行 1688 找品”。
-6. 完成后点击“生成 ERP 上品表”。
-
-## 下一步可继续扩展
-
-- 把 OZON 集采控制也做进网页
-- 把 ERP 自动上品表单提交做进网页
-- 增加人工复核和利润筛选专页

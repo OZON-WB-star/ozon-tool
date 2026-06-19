@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 用户中心</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">大鹅ERP</div>
+          <div class="brand-sub">用户中心与店铺接</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>前台首页</span><small>Home</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>用户中心</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="account.html"><span>账号概览</span></a>
+            <a class="nav-subitem" href="connect-store.html"><span>接入店铺</span></a>
+            <a class="nav-subitem" href="analysis.html"><span>免费分析</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>选品中心</span><small>Selection</small></a>
+        <a class="nav-item" href="admin/index.html"><span>管理后台</span><small>Admin</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-pill">用户中心</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="connect-store.html">接入 Ozon 店铺</a>
+          <a class="shell-pill gold" href="analysis.html">进入免费分析</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>当前使用演示数据</strong>，接口地坢��?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="connect-store.html">继续接入店铺</a>
+        </div>
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>用户中心</span></div>
+            <h2>用户登录后的第一</h2>
+            <p>这里承接前台用户自己的账号资料��权限状态��已绑定店铺和下丢�步操作��后面接入真实登录系统后，这丢�页就是用户的核心工作台入口之丢</p>
+            <div class="feature-links">
+              <span class="badge">账号资料</span>
+              <span class="badge">免费分析</span>
+              <span class="badge">店铺接入</span>
+              <span class="badge">授权状</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">当前套餐</div><div class="v" data-bind="currentUser.planLabel"></div></div>
+            <div class="meta-card"><div class="k">已绑定店</div><div class="v" data-bind="currentUser.storesBound"></div></div>
+            <div class="meta-card"><div class="k">分析权限</div><div class="v" data-bind="currentUser.analysisAccess"></div></div>
+            <div class="meta-card"><div class="k">下一</div><div class="v" data-bind="currentUser.nextStep"></div></div>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <h3>账号资料</h3>
+                <span>用户自己可见的基硢�资料区</span>
+              </div>
+            </div>
+            <div class="list-stack">
+              <div class="list-item"><div><strong>账号名称</strong><span data-bind="currentUser.name"></span></div><div><span data-bind="currentUser.roleLabel"></span></div></div>
+              <div class="list-item"><div><strong>登录邮箱</strong><span data-bind="currentUser.email"></span></div><div><span data-bind="currentUser.verifiedLabel"></span></div></div>
+              <div class="list-item"><div><strong>主营方向</strong><span data-bind="currentUser.focus"></span></div><div><span>可调</span></div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <h3>当前店铺</h3>
+                <span>用户自己的店铺授权状态</span>
+              </div>
+            </div>
+            <div class="list-stack" data-table-root>
+              <table>
+                <thead>
+                  <tr>
+                    <th>店铺</th>
+                    <th>站点</th>
+                    <th>方式</th>
+                    <th>状</th>
+                    <th>朢�近同</th>
+                    <th>备注</th>
+                  </tr>
+                </thead>
+                <tbody data-render-source="entities.currentUserStores" data-render-type="current-stores" data-empty-cols="6"></tbody>
+              </table>
+              <div class="notice-strip">
+                <span>如果要继续扩店，下一步直接新增接入第二个 Ozon 店铺即可</span>
+                <a class="muted-link" href="connect-store.html">去接</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

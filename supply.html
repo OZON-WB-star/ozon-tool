@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 货源</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">大鹅ERP</div>
+          <div class="brand-sub">Ozon 选品与运营平</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>商品</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>选品</span><small>Selection</small></a>
+        <a class="nav-item" href="campaigns.html"><span>促销</span><small>Campaigns</small></a>
+        <a class="nav-item" href="orders.html"><span>订单</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>店铺</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>分析</span><span class="free-pill">免费</span></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>货源</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem active" href="supply.html"><span>货源中心</span></a>
+            <a class="nav-subitem" href="supplier-list.html"><span>供应商列</span></a>
+            <a class="nav-subitem" href="sample-tracking.html"><span>样品跟进</span></a>
+            <a class="nav-subitem" href="purchase-flow.html"><span>采购链路</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="tools.html"><span>工具</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-pill">货源中心</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="supplier-list.html">供应商列</a>
+          <a class="shell-pill gold" href="purchase-flow.html">采购链路</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>货源</span></div>
+            <h2>货源模块</h2>
+            <p>货源模块是��品之后朢�自然的承接点。这里先把供应商、样品和采购链路串起来，后面再继续补 1688 对接、报价对比和入仓跟踪，形成更完整的供应链闭环</p>
+            <div class="feature-links">
+              <span class="badge">供应商管</span>
+              <span class="badge">样品跟进</span>
+              <span class="badge">采购链路</span>
+              <span class="badge">与��品联动</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">供应商数</div><div class="v" data-bind="supply.suppliers" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">核心供应</div><div class="v" data-bind="supply.core" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">待复核报</div><div class="v" data-bind="supply.quotes" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">样品</div><div class="v" data-bind="supply.sampleActive" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title"><h3>货源子模</h3><span>先把朢�常用的采购前链路补出来</span></div></div>
+          <div class="card-grid">
+            <a class="card" href="supplier-list.html"><h4>供应商列</h4><p>管理供应商报价��起订量、交期和合作评分</p></a>
+            <a class="card" href="sample-tracking.html"><h4>样品跟进</h4><p>跟进寄样、到样��评估结果和是否进入商品草稿6�0</p></a>
+            <a class="card" href="purchase-flow.html"><h4>采购链路</h4><p>把��品、样品和补货进一步串成采购执行流程</p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

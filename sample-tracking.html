@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 样品跟进</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">大鹅ERP</div><div class="brand-sub">Ozon 选品与运营平</div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>商品</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>选品</span><small>Selection</small></a>
+        <a class="nav-item" href="orders.html"><span>订单</span><small>Orders</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>货源</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="supply.html"><span>货源中心</span></a>
+            <a class="nav-subitem" href="supplier-list.html"><span>供应商列</span></a>
+            <a class="nav-subitem active" href="sample-tracking.html"><span>样品跟进</span></a>
+            <a class="nav-subitem" href="purchase-flow.html"><span>采购链路</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon"></div><div class="shell-icon"></div><div class="shell-pill">样品跟进</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="supplier-list.html">供应商列</a><a class="shell-pill gold" href="product-drafts.html">通过后进草稿6�0</a></div>
+      </div>
+      <section class="content">
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>货源</span><span>/</span><span>样品跟进</span></div><h2>样品页负责把选品变成可判断的商品</h2><p>这里先记录寄样��到样��测试反馈和是否进入草稿6�0池��后续可以继续接图片、视频��质棢�记录和打样成本</p><div class="feature-links"><span class="badge">待寄</span><span class="badge">在</span><span class="badge">已到</span><span class="badge">待评</span></div></div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">样品</div><div class="v" data-bind="supply.sampleActive" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">本周到样</div><div class="v" data-bind="supply.sampleArrived" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">通过样品</div><div class="v" data-bind="supply.samplePassed" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">待复</div><div class="v" data-bind="supply.sampleRetest" data-bind-countup></div></div>
+          </div>
+        </div>
+        <div class="panel" data-table-root>
+          <div class="panel-header"><div class="panel-title"><h3>样品记录</h3><span>后面可继续加评分项��质棢�图片和视频</span></div></div>
+          <div class="toolbar">
+            <input type="text" placeholder="搜索样品、供应商、下丢��? data-table-search>
+            <select data-table-filter="status">
+              <option value="all">全部状</option>
+              <option value="arrived">已到</option>
+              <option value="review">待评</option>
+              <option value="shipping">在</option>
+              <option value="pending">待寄</option>
+            </select>
+          </div>
+          <table>
+            <thead><tr><th>样品</th><th>供应</th><th>状</th><th>到样时间</th><th>评估结果</th><th>下一</th></tr></thead>
+            <tbody data-render-source="entities.samples" data-render-type="samples" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

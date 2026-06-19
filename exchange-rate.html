@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 汇率工具</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">大鹅ERP</div><div class="brand-sub">Ozon 选品与运营平</div></div></div>
+      <div class="nav-group"><a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a><div class="nav-section"><div class="nav-section-title active"><span>工具</span><span></span></div><div class="nav-sublist"><a class="nav-subitem" href="tools.html"><span>工具中心</span></a><a class="nav-subitem active" href="exchange-rate.html"><span>汇率工具</span></a><a class="nav-subitem" href="tax-calculator.html"><span>关税计算</span></a><a class="nav-subitem" href="copy-template.html"><span>文案模板</span></a></div></div></div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell"><div class="shell-topbar-left"><div class="shell-icon"></div><div class="shell-icon"></div><div class="shell-pill">汇率工具</div></div><div class="shell-topbar-right"><a class="shell-pill brand" href="pricing-tool.html">联动定价</a><a class="shell-pill gold" href="tax-calculator.html">看关</a></div></div>
+      <section class="content">
+        <div class="module-banner"><div><div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>工具</span><span>/</span><span>汇率工具</span></div><h2>汇率是定价链路里的基硢�工具</h2><p>这一页承接人民币、卢布的换算场景，后续可以接实时汇率来源、波动提醒和定价联动</p><div class="feature-links"><span class="badge">RUB/CNY</span><span class="badge">快��换</span><span class="badge">定价联动</span><span class="badge">波动提醒</span></div></div><div class="meta-grid"><div class="meta-card"><div class="k">默认汇率</div><div class="v">11.7</div></div><div class="meta-card"><div class="k">常用场景</div><div class="v">定价</div></div><div class="meta-card"><div class="k">适用页面</div><div class="v">商品 / 工具</div></div><div class="meta-card"><div class="k">后续扩展</div><div class="v">实时接口</div></div></div></div>
+        <div class="panel" data-table-root"><div class="panel-header"><div class="panel-title"><h3>常用换算参</h3><span>后面可以直接做成交互式计算器</span></div></div><div class="toolbar"><input type="text" placeholder="搜索成本、售价��说�? data-table-search></div><table><thead><tr><th>人民币成</th><th>参��卢布售</th><th>适用利润</th><th>备注</th></tr></thead><tbody data-render-source="entities.toolRates" data-render-type="tool-rates" data-empty-cols="4"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

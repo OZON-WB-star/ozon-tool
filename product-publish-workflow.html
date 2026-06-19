@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 上架流程</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">大鹅ERP</div><div class="brand-sub">Ozon 选品与运营平</div></div></div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>商品</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="products.html"><span>商品中心</span></a>
+            <a class="nav-subitem" href="product-drafts.html"><span>商品草稿6�0</span></a>
+            <a class="nav-subitem" href="product-inventory.html"><span>库存管理</span></a>
+            <a class="nav-subitem active" href="product-publish-workflow.html"><span>上架流程</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="selection.html"><span>选品</span><small>Selection</small></a>
+        <a class="nav-item" href="tools.html"><span>工具</span><small>Tools</small></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left"><div class="shell-icon"></div><div class="shell-icon"></div><div class="shell-pill">上架流程</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="selection-center.html">候选�商品池</a><a class="shell-pill gold" href="product-online.html">查看已上架商</a></div>
+      </div>
+      <section class="content">
+        <div class="module-banner">
+          <div><div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>商品</span><span>/</span><span>上架流程</span></div><h2>把��品、草稿��定价和发布串成丢�条工作流</h2><p>这页用来梳理完整的商品上架路径，方便后面继续做批量发布��模板复用户�图片生成和自动补属性</p><div class="feature-links"><span class="badge">候选�商</span><span class="badge">草稿6�0</span><span class="badge">定价</span><span class="badge">发布</span></div></div>
+          <div class="meta-grid"><div class="meta-card"><div class="k">候选�商</div><div class="v" data-bind="selection.candidateProducts" data-bind-countup></div></div><div class="meta-card"><div class="k">草稿6�0总数</div><div class="v" data-bind="products.drafts" data-bind-countup></div></div><div class="meta-card"><div class="k">待发</div><div class="v" data-bind="products.readyToPublish" data-bind-countup></div></div><div class="meta-card"><div class="k">已在线商</div><div class="v" data-bind="products.online" data-bind-countup></div></div></div>
+        </div>
+        <div class="next-grid">
+          <div class="next-card"><strong>1. 候选�商品进入池</strong><p>从市场��类目��关键词分析中挑出分数高、风险低的����商品</p></div>
+          <div class="next-card"><strong>2. 建立商品草稿6�0</strong><p>补图片��补属����做标题和描述，形成可发布草稿</p></div>
+          <div class="next-card"><strong>3. 完成定价与校</strong><p>结合成本、佣金��汇率和竞品价格带做朢�终售价</p></div>
+          <div class="next-card"><strong>4. 进入发布队列</strong><p>把待发布商品统一排队，支持批量上架和模板复用</p></div>
+          <div class="next-card"><strong>5. 在线商品跟踪</strong><p>发布后继续回到在线商品和库存模块跟踪结果</p></div>
+          <div class="next-card"><strong>6. 分析回流选品</strong><p>把商品表现回流到分析和��品模块，形成闭环</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 商品分析</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar"><div class="brand"><div class="brand-mark">DE</div><div><div style="font-size:20px;font-weight:800;">大鹅ERP</div><div class="brand-sub">Ozon 选品与运营平</div></div></div><div class="nav-group"><a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a><div class="nav-section"><div class="nav-section-title active"><span>选品</span><span></span></div><div class="nav-sublist"><a class="nav-subitem" href="selection.html"><span>选品中心</span></a><a class="nav-subitem" href="selection-center.html"><span>候选�商</span></a><a class="nav-subitem active" href="product-analysis.html"><span>商品分析</span></a></div></div></div></aside>
+    <main class="main">
+      <div class="shell-topbar inner-shell"><div class="shell-topbar-left"><div class="shell-icon"></div><div class="shell-icon"></div><div class="shell-pill">商品分析</div></div><div class="shell-topbar-right"><a class="shell-pill brand" href="selection-center.html">候选�商品池</a><a class="shell-pill gold" href="competitor-pricing.html">同行比价</a></div></div>
+      <section class="content">
+        <div class="module-banner"><div><div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>选品</span><span>/</span><span>商品分析</span></div><h2>把类目机会落到具体商</h2><p>商品分析页用于判断��这个单品到底��不值得测����这里先用评分析�毛利��风险和来源来做决策框架，后面再接真实销量与评价数据</p><div class="feature-links"><span class="badge">单品评分</span><span class="badge">毛利</span><span class="badge">风险</span><span class="badge">来源</span></div></div><div class="meta-grid"><div class="meta-card"><div class="k">候选�商</div><div class="v" data-bind="selection.candidateProducts" data-bind-countup></div></div><div class="meta-card"><div class="k">高优先级</div><div class="v">4</div></div><div class="meta-card"><div class="k">建议测款</div><div class="v">3</div></div><div class="meta-card"><div class="k">高风</div><div class="v">1</div></div></div></div>
+        <div class="panel" data-table-root"><div class="panel-header"><div class="panel-title"><h3>单品候选�分</h3><span>先把值得做的商品挑出来，再进入定价与上架</span></div></div><div class="toolbar"><input type="text" placeholder="搜索商品、类目��来�? data-table-search></div><table><thead><tr><th>商品</th><th>类目</th><th>评分</th><th>毛利</th><th>风险</th><th>来源</th></tr></thead><tbody data-render-source="entities.selectionProducts" data-render-type="selection-products" data-empty-cols="6"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

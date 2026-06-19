@@ -1,623 +1,260 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OZON + 1688 网页版工作台</title>
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: rgba(12, 20, 36, 0.82);
-      --line: rgba(148, 163, 184, 0.18);
-      --text: #ebf2ff;
-      --muted: #9fb0cc;
-      --accent: #ff9f43;
-      --accent-2: #55d6be;
-      --danger: #ff6b6b;
-      --success: #7ae29a;
-      --shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(85, 214, 190, 0.16), transparent 36%),
-        radial-gradient(circle at top right, rgba(255, 159, 67, 0.16), transparent 30%),
-        linear-gradient(160deg, #06101c 0%, #0b1220 52%, #121d30 100%);
-      font-family: "Segoe UI Variable", "Microsoft YaHei UI", "PingFang SC", sans-serif;
-      min-height: 100vh;
-    }
-    .shell {
-      max-width: 1520px;
-      margin: 0 auto;
-      padding: 26px 20px 34px;
-    }
-    .hero, .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 18px;
-      padding: 24px 26px;
-      margin-bottom: 18px;
-    }
-    .eyebrow {
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.06;
-    }
-    .subtitle {
-      margin-top: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 760px;
-    }
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
-      font-size: 13px;
-    }
-    .status {
-      display: grid;
-      gap: 12px;
-      padding: 6px 2px;
-    }
-    .status .label {
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .status .value {
-      font-size: 22px;
-      font-weight: 800;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1.08fr 1fr;
-      gap: 18px;
-    }
-    .card {
-      padding: 20px;
-    }
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .section-title h2 {
-      margin: 0;
-      font-size: 20px;
-    }
-    .section-title p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .stack {
-      display: grid;
-      gap: 12px;
-    }
-    .panel {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      border-radius: 18px;
-      padding: 16px;
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .field {
-      display: grid;
-      gap: 6px;
-    }
-    .field label {
-      color: var(--muted);
-      font-size: 13px;
-    }
-    input[type="text"], input[type="file"] {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(8, 13, 24, 0.72);
-      color: var(--text);
-      padding: 12px 14px;
-      font-size: 14px;
-    }
-    .btn {
-      appearance: none;
-      border: 0;
-      border-radius: 14px;
-      padding: 12px 16px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.15s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #ffd166);
-      color: #1e1403;
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,0.08);
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-    .btn-danger {
-      background: rgba(255, 107, 107, 0.18);
-      color: #ffe0e0;
-      border: 1px solid rgba(255, 107, 107, 0.35);
-    }
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .metric {
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-    }
-    .metric .num {
-      display: block;
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-    .metric .label {
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .kv {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .kv:last-child { border-bottom: 0; }
-    .k { color: var(--muted); }
-    .v { word-break: break-all; }
-    .muted { color: var(--muted); }
-    .ok { color: var(--success); }
-    .warn { color: #ffd166; }
-    .table-wrap {
-      overflow: auto;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(8, 13, 24, 0.72);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 920px;
-    }
-    th, td {
-      text-align: left;
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      vertical-align: top;
-      font-size: 13px;
-    }
-    th {
-      position: sticky;
-      top: 0;
-      background: #10192b;
-      color: #d7e7ff;
-    }
-    .files {
-      display: grid;
-      gap: 10px;
-      max-height: 290px;
-      overflow: auto;
-    }
-    .file-item {
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-    .file-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-    .footer {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-    @media (max-width: 1100px) {
-      .hero, .grid { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 760px) {
-      .shell { padding: 16px 12px 26px; }
-      .metrics { grid-template-columns: 1fr; }
-      .kv { grid-template-columns: 1fr; gap: 4px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 概览</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="shell">
-    <div class="hero">
-      <div>
-        <div class="eyebrow">OZON + 1688 WEB WORKBENCH</div>
-        <h1>OZON 选品 + 1688 找货 + ERP 上品<br />网页版本</h1>
-        <div class="subtitle">
-          现在网页版本默认以 `F:\OZON-PY\OZON_1688独立软件_final` 作为主目录。
-          最新导出、1688 结果表、ERP 上品表，都会优先从这个目录读取并写回这个目录。
-        </div>
-        <div class="chips">
-          <div class="chip">默认 F 盘主工程</div>
-          <div class="chip">自动定位最新导出</div>
-          <div class="chip">1688 运行 / 停止</div>
-          <div class="chip">ERP 上品表生成</div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">大鹅ERP</div>
+          <div class="brand-sub">Ozon 选品与运营平</div>
         </div>
       </div>
-      <div class="status">
-        <div class="label">当前任务状态</div>
-        <div class="value" id="jobStatus">加载中...</div>
-        <div class="label">提示</div>
-        <div id="message" class="muted">-</div>
-        <div class="label">浏览器调试地址</div>
-        <div id="currentCdp" class="muted">http://127.0.0.1:9222</div>
-      </div>
-    </div>
+      <div class="nav-group">
+        <a class="nav-item active" href="index.html"><span>概览</span><small>Overview</small></a>
 
-    <div class="grid">
-      <div class="stack">
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>主流程</h2>
-              <p>先刷新最新导出，再检测浏览器，然后运行 1688 找品，最后生成 ERP 上品表。</p>
-            </div>
-          </div>
-
-          <div class="stack">
-            <div class="field">
-              <label for="cdpUrl">Chrome / Edge 调试地址</label>
-              <input id="cdpUrl" type="text" value="http://127.0.0.1:9222" />
-            </div>
-
-            <div class="row">
-              <button class="btn btn-secondary" id="refreshLatestBtn">刷新最新导出</button>
-              <button class="btn btn-secondary" id="checkBrowserBtn">检测 1688 浏览器</button>
-              <button class="btn btn-primary" id="run1688Btn">运行 1688 找品</button>
-              <button class="btn btn-danger" id="stopJobBtn">停止当前任务</button>
-            </div>
-
-            <div class="row">
-              <button class="btn btn-secondary" id="generateErpBtn">生成 ERP 上品表</button>
-              <button class="btn btn-secondary" id="clearBtn">清空当前状态</button>
-              <a class="btn btn-secondary" id="downloadResultBtn" href="#" target="_blank" style="display:none;">下载 1688 结果</a>
-              <a class="btn btn-secondary" id="downloadErpBtn" href="#" target="_blank" style="display:none;">下载 ERP 表</a>
-            </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>商品</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="products.html"><span>商品中心</span></a>
+            <a class="nav-subitem" href="product-online.html"><span>在线商品</span></a>
+            <a class="nav-subitem" href="product-drafts.html"><span>商品草稿6�0</span></a>
           </div>
         </div>
 
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>手动上传</h2>
-              <p>如果不想依赖自动定位，也可以直接上传一个 Excel 作为当前源文件。</p>
-            </div>
-          </div>
-
-          <div class="stack">
-            <input id="fileInput" type="file" accept=".xlsx,.xlsm,.xltx,.xltm" />
-            <div class="row">
-              <button class="btn btn-primary" id="uploadBtn">上传 Excel</button>
-              <button class="btn btn-secondary" id="refreshStateBtn">刷新状态</button>
-            </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>选品</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="selection.html"><span>选品中心</span></a>
+            <a class="nav-subitem" href="market-analysis.html"><span>大盘总览</span></a>
+            <a class="nav-subitem" href="keyword-analysis.html"><span>关键词分</span></a>
           </div>
         </div>
 
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>当前文件</h2>
-              <p>当前正在处理的源文件、1688 结果表和 ERP 表。</p>
-            </div>
+        <div class="nav-section">
+          <div class="nav-section-title"><span>促销</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="campaigns.html"><span>促销中心</span></a>
+            <a class="nav-subitem" href="campaign-list.html"><span>活动列表</span></a>
           </div>
-          <div class="panel">
-            <div class="kv"><div class="k">项目主目录</div><div class="v" id="projectRoot">-</div></div>
-            <div class="kv"><div class="k">导出目录</div><div class="v" id="exportRoot">-</div></div>
-            <div class="kv"><div class="k">当前源文件</div><div class="v" id="sourcePath">-</div></div>
-            <div class="kv"><div class="k">1688 结果表</div><div class="v" id="resultPath">-</div></div>
-            <div class="kv"><div class="k">ERP 上品表</div><div class="v" id="erpPath">-</div></div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title"><span>订单</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="orders.html"><span>订单中心</span></a>
+            <a class="nav-subitem" href="order-list.html"><span>订单列表</span></a>
+            <a class="nav-subitem" href="order-exceptions.html"><span>异常订单</span></a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title"><span>店铺</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="stores.html"><span>店铺中心</span></a>
+            <a class="nav-subitem" href="store-list.html"><span>店铺列表</span></a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title"><span>分析</span><span class="free-pill">免费</span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="analysis.html"><span>分析中心</span></a>
+            <a class="nav-subitem" href="analysis-overview.html"><span>店铺概览</span></a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title"><span>货源</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="supply.html"><span>货源中心</span></a>
+            <a class="nav-subitem" href="supplier-list.html"><span>供应商列</span></a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title"><span>工具</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="tools.html"><span>工具中心</span></a>
+            <a class="nav-subitem" href="exchange-rate.html"><span>汇率工具</span></a>
+            <a class="nav-subitem" href="copy-template.html"><span>文案模板</span></a>
           </div>
         </div>
       </div>
+    </aside>
 
-      <div class="stack">
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>Excel 摘要</h2>
-              <p>根据当前源文件或当前结果表自动预览。</p>
-            </div>
-          </div>
-          <div class="metrics">
-            <div class="metric"><span class="num" id="metricSheets">-</span><span class="label">工作表数</span></div>
-            <div class="metric"><span class="num" id="metricRows">-</span><span class="label">目标行数</span></div>
-            <div class="metric"><span class="num" id="metricSize">-</span><span class="label">文件大小</span></div>
-            <div class="metric"><span class="num" id="metricJob">-</span><span class="label">任务状态</span></div>
-          </div>
+    <main class="main">
+      <div class="shell-topbar">
+        <div class="shell-topbar-left">
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-pill">概览</div>
         </div>
-
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>最近 Excel 文件</h2>
-              <p>优先显示 F 盘主工程里的导出文件。</p>
-            </div>
-          </div>
-          <div class="files" id="recentFiles"></div>
-        </div>
-
-        <div class="card">
-          <div class="section-title">
-            <div>
-              <h2>目标行预览</h2>
-              <p>这里只预览前几条，方便快速确认文件是否正确。</p>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>商品标题</th>
-                  <th>SKU</th>
-                  <th>评分</th>
-                  <th>人民币价格</th>
-                  <th>1688 状态</th>
-                  <th>备注</th>
-                </tr>
-              </thead>
-              <tbody id="previewBody">
-                <tr><td colspan="7" class="muted">暂无数据</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="footer">
-            网页服务地址：`http://127.0.0.1:8000`。<br />
-            这版已经统一默认使用 `F:\OZON-PY` 主项目；后面我们再继续把 OZON 采集和 ERP 自动上品更深地接进这个网页版本。
-          </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="login.html">用户登录</a>
+          <a class="shell-pill brand" href="admin/index.html">管理后台</a>
+          <a class="shell-pill brand" href="tools.html">下载浏览器插</a>
+          <a class="shell-pill brand" href="account.html">我的工作</a>
+          <a class="shell-pill brand" href="analysis.html">客服</a>
+          <a class="shell-pill gold" href="analysis.html">VIP 弢�通会</a>
+          <div class="shell-pill">🔆 10</div>
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-icon">16</div>
         </div>
       </div>
-    </div>
+
+      <div class="tab-strip" style="margin-bottom:18px;">
+        <div class="tab-chip active">概览</div>
+      </div>
+
+      <section class="content">
+        <div class="welcome-card">
+          <div class="mascot">🪿</div>
+          <div class="welcome-copy">
+            <h2>中午好，180****5016，午休时间也别忘了补充能量！</h2>
+            <p>欢迎来到大鹅ERP。现在首页左侧导航已经改成更接近毛子前台的层级展弢�感，后面我会继续把二级页和交互都徢�这套感觉靠拢</p>
+          </div>
+          <div class="metric-inline-grid">
+            <div class="metric-inline"><div class="k">今日锢�售额</div><div class="v" data-bind="analysis.salesToday" data-prefix="¥ " data-bind-countup></div></div>
+            <div class="metric-inline"><div class="k">本月锢�售额</div><div class="v">¥ 0</div></div>
+            <div class="metric-inline"><div class="k">上月锢�售额</div><div class="v">¥ 0</div></div>
+            <div class="metric-inline"><div class="k">今日订单</div><div class="v" data-bind="orders.today" data-bind-countup></div></div>
+            <div class="metric-inline"><div class="k">等待备货</div><div class="v" data-bind="orders.pending" data-bind-countup></div></div>
+            <div class="metric-inline"><div class="k">店铺</div><div class="v" data-bind="stores.total" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="stack-grid">
+            <div class="journey-grid">
+              <div class="journey-card tint-blue">
+                <h3>弢�店前 · 了解市场和开</h3>
+                <div class="journey-step">
+                  <span class="num">1</span><span class="title">俄罗斯市</span>
+                  <ul>
+                    <li>了解俄罗斯市</li>
+                    <li>了解 OZON 平台</li>
+                  </ul>
+                </div>
+                <div class="journey-step">
+                  <span class="num">2</span><span class="title">弢�店入</span>
+                  <ul>
+                    <li>OZON 弢�店教</li>
+                    <li>弢�店常见问</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="journey-card tint-purple">
+                <h3>出单�?· 做好运营快��出</h3>
+                <div class="journey-step">
+                  <span class="num">3</span><span class="title">数据选品</span>
+                  <ul>
+                    <li><a href="market-analysis.html">大盘市场分析</a></li>
+                    <li><a href="industry-analysis.html">行业分析</a></li>
+                    <li><a href="product-analysis.html">商品分析</a></li>
+                    <li><a href="keyword-analysis.html">关键词分</a></li>
+                  </ul>
+                </div>
+                <div class="journey-step">
+                  <span class="num">4</span><span class="title">产品定价</span>
+                  <ul>
+                    <li><a href="pricing-tool.html">各种成本拆解</a></li>
+                    <li><a href="competitor-pricing.html">同行比价</a></li>
+                  </ul>
+                </div>
+                <div class="journey-step">
+                  <span class="num">5</span><span class="title">上传产品</span>
+                  <ul>
+                    <li><a href="product-drafts.html">手动 / 批量 / ERP</a></li>
+                    <li><a href="product-online.html">创建仓库</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="journey-card tint-orange">
+                <h3>出单�?· 分析优化爆单大卖</h3>
+                <div class="journey-step">
+                  <span class="num">6</span><span class="title">物流发货</span>
+                  <ul>
+                    <li><a href="order-list.html">商品采购</a></li>
+                    <li><a href="purchase-flow.html">打包发货</a></li>
+                    <li><a href="orders.html">资金回款</a></li>
+                  </ul>
+                </div>
+                <div class="journey-step">
+                  <span class="num">7</span><span class="title">分析优化</span>
+                  <ul>
+                    <li><a href="analysis-overview.html">数据监控中心</a></li>
+                    <li><a href="analysis-products.html">分析数据</a></li>
+                    <li><a href="stores.html">店铺 / 产品优化</a></li>
+                  </ul>
+                </div>
+                <div class="journey-step">
+                  <span class="num">8</span><span class="title">爆单大卖</span>
+                  <ul>
+                    <li><a href="supply.html">优化供应</a></li>
+                    <li><a href="tools.html">本土</a></li>
+                    <li><a href="campaigns.html">品牌</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel poster-card">
+              <div class="poster-wrap">
+                <div class="poster-brand">
+                  <div class="poster-logo">DE</div>
+                  <div>大鹅ERP官方软件</div>
+                </div>
+                <h2 class="poster-big">OZON选品 & 上品</h2>
+                <p class="poster-sub">丢�键跟�?+ AI 上品神器，助你高效运营俄罗斯电商平台</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-grid">
+            <div class="panel shortcut-card">
+              <div class="panel-header" style="margin-bottom:14px;">
+                <div class="panel-title">
+                  <h3>快捷入口</h3>
+                  <span>按毛子前台常用区域来布局</span>
+                </div>
+              </div>
+              <div class="shortcut-grid">
+                <a class="shortcut-item" href="stores.html"><div class="shortcut-badge"></div><strong>OZON<br>卖家后台</strong></a>
+                <a class="shortcut-item" href="campaigns.html"><div class="shortcut-badge"></div><strong>OZON<br>商城</strong></a>
+                <a class="shortcut-item" href="supply.html"><div class="shortcut-badge"></div><strong>中国<br>货源</strong></a>
+                <a class="shortcut-item" href="tools.html"><div class="shortcut-badge"></div><strong>OZON<br>类目佣金</strong></a>
+                <a class="shortcut-item" href="orders.html"><div class="shortcut-badge"></div><strong>OZON<br>物流</strong></a>
+                <a class="shortcut-item" href="analysis.html"><div class="shortcut-badge"></div><strong>OZON<br>知识</strong></a>
+                <a class="shortcut-item" href="selection.html"><div class="shortcut-badge"></div><strong>OZON<br>卖家</strong></a>
+                <a class="shortcut-item" href="copy-template.html"><div class="shortcut-badge"></div><strong>Yandex<br>翻译</strong></a>
+                <a class="shortcut-item" href="pricing-tool.html"><div class="shortcut-badge"></div><strong><br></strong></a>
+                <a class="shortcut-item" href="tax-calculator.html"><div class="shortcut-badge"></div><strong><br></strong></a>
+                <a class="shortcut-item" href="admin/index.html"><div class="shortcut-badge"></div><strong>管理<br>后台</strong></a>
+                <a class="shortcut-item" href="login.html"><div class="shortcut-badge"></div><strong>用户<br>登录</strong></a>
+                <a class="shortcut-item" href="account.html"><div class="shortcut-badge"></div><strong>我的<br>工作</strong></a>
+                <a class="shortcut-item" href="selection-center.html"><div class="shortcut-badge"></div><strong>候<br>商品</strong></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <script>
-    const el = (id) => document.getElementById(id);
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
-    }
-
-    async function postJson(url, payload = {}) {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || data.message || "请求失败");
-      }
-      return data;
-    }
-
-    async function refreshState() {
-      const res = await fetch("/api/state", { cache: "no-store" });
-      const data = await res.json();
-
-      const job = data.job || null;
-      el("jobStatus").textContent = job ? `${job.kind || "任务"} / ${job.status_text}` : "待命";
-      el("message").textContent = data.message || "-";
-      el("currentCdp").textContent = data.cdp_url || "-";
-      el("cdpUrl").value = data.cdp_url || "http://127.0.0.1:9222";
-
-      el("projectRoot").textContent = data.project_root || "-";
-      el("exportRoot").textContent = data.export_root || "-";
-      el("sourcePath").textContent = data.current_source_path || "-";
-      el("resultPath").textContent = data.current_result_path || "-";
-      el("erpPath").textContent = data.current_erp_path || "-";
-
-      const summary = data.summary || {};
-      el("metricSheets").textContent = summary.sheet_count ?? "-";
-      el("metricRows").textContent = summary.target_rows ?? "-";
-      el("metricSize").textContent = summary.file_size_text ?? "-";
-      el("metricJob").textContent = job ? job.status_text : "待命";
-
-      const resultBtn = el("downloadResultBtn");
-      if (data.download_result_url) {
-        resultBtn.style.display = "inline-flex";
-        resultBtn.href = data.download_result_url;
-      } else {
-        resultBtn.style.display = "none";
-      }
-
-      const erpBtn = el("downloadErpBtn");
-      if (data.download_erp_url) {
-        erpBtn.style.display = "inline-flex";
-        erpBtn.href = data.download_erp_url;
-      } else {
-        erpBtn.style.display = "none";
-      }
-
-      const filesBox = el("recentFiles");
-      const files = data.recent_files || [];
-      filesBox.innerHTML = "";
-      if (!files.length) {
-        filesBox.innerHTML = '<div class="file-item muted">暂无 Excel 文件</div>';
-      } else {
-        files.forEach((file) => {
-          const item = document.createElement("div");
-          item.className = "file-item";
-          item.innerHTML = `
-            <strong>${escapeHtml(file.name)}</strong>
-            <div class="muted">${escapeHtml(file.path)}</div>
-            <div class="muted">${escapeHtml(file.mtime)} / ${escapeHtml(file.size)}</div>
-          `;
-          filesBox.appendChild(item);
-        });
-      }
-
-      const previewBody = el("previewBody");
-      const preview = data.preview || [];
-      previewBody.innerHTML = "";
-      if (!preview.length) {
-        previewBody.innerHTML = '<tr><td colspan="7" class="muted">暂无可预览目标行</td></tr>';
-      } else {
-        preview.forEach((row, index) => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${escapeHtml(row.title)}</td>
-            <td>${escapeHtml(row.sku)}</td>
-            <td>${row.score ?? ""}</td>
-            <td>${row.ozon_price_cny ?? ""}</td>
-            <td>${escapeHtml(row.current_status || row.status || "")}</td>
-            <td>${escapeHtml(row.current_note || row.note || "")}</td>
-          `;
-          previewBody.appendChild(tr);
-        });
-      }
-    }
-
-    async function uploadFile() {
-      const file = el("fileInput").files[0];
-      if (!file) {
-        alert("请先选择一个 Excel 文件。");
-        return;
-      }
-      const form = new FormData();
-      form.append("file", file);
-      el("uploadBtn").disabled = true;
-      try {
-        const res = await fetch("/api/upload", { method: "POST", body: form });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "上传失败");
-        await refreshState();
-        alert(`上传成功：${data.filename}`);
-      } catch (error) {
-        alert(error.message);
-      } finally {
-        el("uploadBtn").disabled = false;
-      }
-    }
-
-    async function refreshLatest() {
-      try {
-        await postJson("/api/refresh-latest");
-        await refreshState();
-      } catch (error) {
-        alert(error.message);
-      }
-    }
-
-    async function checkBrowser() {
-      try {
-        const data = await postJson("/api/check-browser", { cdp_url: el("cdpUrl").value.trim() });
-        await refreshState();
-        alert(`浏览器检测通过：${data.browser || data.cdp_url}`);
-      } catch (error) {
-        alert(error.message);
-      }
-    }
-
-    async function run1688() {
-      el("run1688Btn").disabled = true;
-      try {
-        await postJson("/api/run-1688", { cdp_url: el("cdpUrl").value.trim() });
-        await refreshState();
-      } catch (error) {
-        alert(error.message);
-      } finally {
-        el("run1688Btn").disabled = false;
-      }
-    }
-
-    async function stopJob() {
-      try {
-        await postJson("/api/stop-job");
-        await refreshState();
-      } catch (error) {
-        alert(error.message);
-      }
-    }
-
-    async function generateErp() {
-      el("generateErpBtn").disabled = true;
-      try {
-        await postJson("/api/generate-erp");
-        await refreshState();
-      } catch (error) {
-        alert(error.message);
-      } finally {
-        el("generateErpBtn").disabled = false;
-      }
-    }
-
-    async function clearState() {
-      try {
-        await postJson("/api/clear");
-        await refreshState();
-      } catch (error) {
-        alert(error.message);
-      }
-    }
-
-    el("uploadBtn").addEventListener("click", uploadFile);
-    el("refreshLatestBtn").addEventListener("click", refreshLatest);
-    el("checkBrowserBtn").addEventListener("click", checkBrowser);
-    el("run1688Btn").addEventListener("click", run1688);
-    el("stopJobBtn").addEventListener("click", stopJob);
-    el("generateErpBtn").addEventListener("click", generateErp);
-    el("clearBtn").addEventListener("click", clearState);
-    el("refreshStateBtn").addEventListener("click", refreshState);
-
-    refreshState();
-    setInterval(refreshState, 2500);
-  </script>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
+
+
+

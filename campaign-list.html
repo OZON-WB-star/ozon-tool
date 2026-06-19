@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 活动列表</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:20px;font-weight:800;">大鹅ERP</div>
+          <div class="brand-sub">Ozon 选品与运营平</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Overview</small></a>
+        <a class="nav-item" href="products.html"><span>商品</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>选品</span><small>Selection</small></a>
+        <div class="nav-section">
+          <div class="nav-section-title active"><span>促销</span><span></span></div>
+          <div class="nav-sublist">
+            <a class="nav-subitem" href="campaigns.html"><span>促销中心</span></a>
+            <a class="nav-subitem active" href="campaign-list.html"><span>活动列表</span></a>
+            <a class="nav-subitem" href="campaign-plan.html"><span>促销计划</span></a>
+          </div>
+        </div>
+        <a class="nav-item" href="orders.html"><span>订单</span><small>Orders</small></a>
+        <a class="nav-item" href="stores.html"><span>店铺</span><small>Stores</small></a>
+        <a class="nav-item" href="analysis.html"><span>分析</span><span class="free-pill">免费</span></a>
+        <a class="nav-item" href="supply.html"><span>货源</span><small>Suppliers</small></a>
+        <a class="nav-item" href="tools.html"><span>工具</span><small>Tools</small></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shell-topbar inner-shell">
+        <div class="shell-topbar-left">
+          <div class="shell-icon"></div>
+          <div class="shell-icon"></div>
+          <div class="shell-pill">活动列表</div>
+        </div>
+        <div class="shell-topbar-right">
+          <a class="shell-pill brand" href="campaign-plan.html">查看促销计划</a>
+          <a class="shell-pill gold" href="analysis-products.html">效果关联分析</a>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="module-banner">
+          <div>
+            <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>促销</span><span>/</span><span>活动列表</span></div>
+            <h2>活动页先做清单和状��管</h2>
+            <p>促销模块已经具备演示交互，当前活动列表也改成了共享数据渲染��后面接 Ozon 活动报名数据或��我们自己的促销策略中心时，可以直接继续徢�下扩展</p>
+            <div class="feature-links">
+              <span class="badge">报名</span>
+              <span class="badge">进行</span>
+              <span class="badge">待复</span>
+              <span class="badge">待报</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card"><div class="k">活动总数</div><div class="v" data-bind="campaigns.total" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">进行</div><div class="v" data-bind="campaigns.running" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">待报</div><div class="v" data-bind="campaigns.pending" data-bind-countup></div></div>
+            <div class="meta-card"><div class="k">待复</div><div class="v" data-bind="campaigns.review" data-bind-countup></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>活动清单</h3>
+              <span>支持按店铺与活动状��筛选，后面可以继续补报名入口与活动效果沉淀</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="搜索活动名��店铺��建�? data-table-search>
+            <select data-table-filter="store">
+              <option value="all">全部店铺</option>
+              <option value="store_qiha">QIHA-GEILI</option>
+              <option value="store_pethome">PetHome Lab</option>
+            </select>
+            <select data-table-filter="status">
+              <option value="all">全部状</option>
+              <option value="running">进行</option>
+              <option value="applying">报名</option>
+              <option value="review">待复</option>
+              <option value="pending">待报</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>活动名称</th>
+                <th>店铺</th>
+                <th>时间</th>
+                <th>参与商品</th>
+                <th>状</th>
+                <th>建议</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.campaigns" data-render-type="campaigns" data-empty-cols="6"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/ozon-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+

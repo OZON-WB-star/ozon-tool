@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大鹅ERP - 商品表现分析</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DE</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;">大鹅ERP</div>
+          <div class="brand-sub">Ozon 智能运营后台</div>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a class="nav-item" href="index.html"><span>概览</span><small>Dashboard</small></a>
+        <a class="nav-item" href="products.html"><span>商品</span><small>Products</small></a>
+        <a class="nav-item" href="selection.html"><span>选品</span><small>Selection</small></a>
+        <a class="nav-item active" href="analysis.html"><span>分析</span><span class="free-pill">免费</span></a>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>分析</span><span>/</span><span>商品表现</span></div>
+          <h1 class="page-title">商品表现分析</h1>
+        </div>
+      </div>
+      <section class="content">
+        <div class="notice-strip" style="margin-bottom:18px;">
+          <span><strong data-runtime-status>当前使用演示数据</strong>，接口地坢��?span data-runtime-base>http://127.0.0.1:8010</span></span>
+          <a class="muted-link" href="products.html">去商品页处理</a>
+        </div>
+        <div class="hero">
+          <div>
+            <h2>先把商品表现看清楚，再决定补货和优化</h2>
+            <p>这一页现在直接吃后端分析数据，后面继续接真实 Ozon 数据时，可以把曝光��点击��转化��库存风险都沿用同一套结构</p>
+            <div class="hero-badges">
+              <span class="badge">曝光</span>
+              <span class="badge">点击</span>
+              <span class="badge">转化</span>
+              <span class="badge">库存风险</span>
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card"><div class="label">候选�商</div><div class="value" data-bind="selection.candidateProducts" data-bind-countup></div><div class="up">已进入分析池</div></div>
+            <div class="metric-card"><div class="label">今日订单</div><div class="value" data-bind="orders.today" data-bind-countup></div><div class="up">统一数据</div></div>
+            <div class="metric-card"><div class="label">待处理订</div><div class="value" data-bind="orders.pending" data-bind-countup></div><div class="mid">建议联动订单</div></div>
+            <div class="metric-card"><div class="label">店铺健康</div><div class="value" data-bind="stores.avgHealth" data-bind-countup></div><div class="up">整体稳定</div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-table-root>
+          <div class="panel-header">
+            <div class="panel-title">
+              <h3>商品表现列表</h3>
+              <span>从分析页直接看到风险和建议，后面可继续联动商品页处理</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="搜索商品、建议动�? data-table-search>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>商品</th>
+                <th>曝光</th>
+                <th>点击</th>
+                <th>转化</th>
+                <th>�?7 日销</th>
+                <th>风险</th>
+                <th>建议</th>
+              </tr>
+            </thead>
+            <tbody data-render-source="entities.analysisProducts" data-render-type="analysis-products" data-empty-cols="7"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/config.js"></script>
+  <script src="assets/mock-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+
