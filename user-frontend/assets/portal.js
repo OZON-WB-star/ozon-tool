@@ -25,7 +25,7 @@
         window.DaeApi.setSession(result.access_token, result.user_id);
         setMessage(message, "登录成功，正在进入用户中心。", false);
         window.setTimeout(() => {
-          window.location.href = "account.html";
+          window.location.href = window.location.pathname.includes("admin-frontend") ? "index.html" : "account.html";
         }, 500);
       } catch (error) {
         setMessage(message, error.message || "登录失败，请检查账号信息。", true);
@@ -61,7 +61,7 @@
         window.DaeApi.setSession(loginResult.access_token, loginResult.user_id);
         setMessage(message, "注册成功，正在进入用户中心。", false);
         window.setTimeout(() => {
-          window.location.href = "account.html";
+          window.location.href = window.location.pathname.includes("admin-frontend") ? "index.html" : "account.html";
         }, 500);
       } catch (error) {
         setMessage(message, error.message || "注册失败，请稍后重试。", true);
@@ -86,14 +86,15 @@
         api_key: String(formData.get("api_key") || "").trim() || null,
         owner_email: String(formData.get("owner_email") || "").trim(),
         note: String(formData.get("note") || "").trim() || null,
+        test_now: formData.get("test_now") === "on",
       };
 
       try {
         setMessage(message, "正在提交店铺接入信息...", false);
         await window.DaeApi.connectStore(payload);
-        setMessage(message, "店铺接入成功，正在跳转到用户中心。", false);
+        setMessage(message, "店铺接入信息已提交，授权状态已写入系统，正在跳转。", false);
         window.setTimeout(() => {
-          window.location.href = "account.html";
+          window.location.href = window.location.pathname.includes("admin-frontend") ? "index.html" : "account.html";
         }, 700);
       } catch (error) {
         setMessage(message, error.message || "提交失败，请检查参数。", true);

@@ -148,21 +148,24 @@ function renderStoresRow(item, store) {
   const authMap = {
     api: '<span class="tag good">Seller API</span>',
     cookie: '<span class="tag warn">Cookie</span>',
+    hybrid: '<span class="tag warn">混合模式</span>',
   };
   const statusMap = {
     normal: '<span class="tag good">正常</span>',
+    pending: '<span class="tag warn">待测试</span>',
     error: '<span class="tag bad">异常</span>',
+    pending: '<span class="tag warn">待测试</span>',
   };
-  const advice = item.status === "error" ? "重新授权" : item.auth === "cookie" ? "建议迁移 API" : "继续使用";
+  const advice = item.status === "error" ? "重新授权或检查 Key 权限" : item.status === "pending" ? "点击测试授权" : "授权正常";
   return `
-    <tr data-row data-auth="${item.auth}" data-status="${item.status}" data-search="${item.name} ${item.site} ${advice}">
-      <td><strong>${item.name}</strong></td>
+    <tr data-row data-auth="${item.auth}" data-status="${item.status}" data-search="${item.name} ${item.site} ${item.note || ""} ${advice}">
+      <td><strong>${item.name}</strong><br><span style="color:#6d768c;">Client ID: ${item.clientIdMasked || "-"}</span></td>
       <td>${item.site}</td>
       <td>${authMap[item.auth] || '<span class="tag">未知</span>'}</td>
       <td>${statusMap[item.status] || '<span class="tag">未知</span>'}</td>
       <td>${item.syncedAt || "-"}</td>
       <td class="${item.health >= 80 ? "up" : item.health >= 60 ? "mid" : "down"}">${item.health}</td>
-      <td>${advice}</td>
+      <td>${item.note || advice}</td>
     </tr>
   `;
 }
@@ -246,15 +249,19 @@ function renderAdminStoresRow(item, store) {
   const authMap = {
     api: '<span class="tag good">Seller API</span>',
     cookie: '<span class="tag warn">Cookie</span>',
+    hybrid: '<span class="tag warn">混合模式</span>',
   };
   const statusMap = {
     normal: '<span class="tag good">正常</span>',
+    pending: '<span class="tag warn">待测试</span>',
     error: '<span class="tag bad">异常</span>',
+    pending: '<span class="tag warn">待测试</span>',
   };
   return `
-    <tr data-row data-auth="${item.auth}" data-status="${item.status}" data-search="${owner?.name || ""} ${item.name} ${item.note || ""}">
-      <td>${owner?.name || "-"}</td>
-      <td>${item.name}</td>
+    <tr data-row data-auth="${item.auth}" data-status="${item.status}" data-search="${owner?.name || ""} ${item.name} ${item.site} ${item.note || ""}">
+      <td>${owner?.name || item.ownerId || "-"}</td>
+      <td><strong>${item.name}</strong><br><span style="color:#6d768c;">${item.clientIdMasked || "未配置"}</span></td>
+      <td>${item.site || "-"}</td>
       <td>${authMap[item.auth] || '<span class="tag">未知</span>'}</td>
       <td>${statusMap[item.status] || '<span class="tag">未知</span>'}</td>
       <td>${item.syncedAt || "-"}</td>
@@ -271,6 +278,7 @@ function renderCurrentStoresRow(item) {
   const statusMap = {
     normal: '<span class="tag good">正常</span>',
     error: '<span class="tag bad">异常</span>',
+    pending: '<span class="tag warn">待测试</span>',
   };
   return `
     <tr data-row data-auth="${item.auth}" data-status="${item.status}" data-search="${item.name} ${item.site} ${item.note || ""}">
@@ -456,6 +464,7 @@ function renderStoreConfigsRow(item, store) {
     normal: '<span class="tag good">正常</span>',
     warn: '<span class="tag warn">待优化</span>',
     error: '<span class="tag bad">异常</span>',
+    pending: '<span class="tag warn">待测试</span>',
   };
   return `
     <tr data-row data-status="${item.status}" data-store="${item.storeId}" data-search="${storeName} ${item.configItem} ${item.note}">

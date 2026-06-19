@@ -1,60 +1,99 @@
-# 大鹅ERP 正式开发版
+# 大鹅ERP 正式开发版 V3
 
-这个版本不是单纯的 GitHub Pages 静态演示，而是按正式软件开发方式拆分：
+这是面向正式开发的跨境电商 ERP / SaaS 项目骨架。
 
-- `user-frontend/`：用户前台，给注册用户/客户使用。
-- `admin-frontend/`：管理后台，给你自己和内部运营人员使用。
-- `backend/`：FastAPI 后端接口，负责登录、权限、店铺、商品、订单、选品、数据同步等。
-- `docs/`：产品规划、权限设计、数据库设计、接口规划、部署说明。
+## V3 已完成
 
-## 一、前台和后台的区别
+- 用户前台和管理后台分离
+- FastAPI 后端
+- SQLite 本地开发数据库
+- 用户注册 / 登录
+- JWT 登录状态
+- 普通用户与管理员权限隔离
+- Ozon 店铺授权接入
+- Ozon Client ID / API Key 保存
+- Ozon API 授权测试
+- 后台查看所有用户店铺授权状态
 
-### 用户前台
-用户前台是客户登录后看到的系统，重点是让客户自己使用工具：注册登录、绑定 Ozon 店铺、商品管理、订单查看、库存预警、选品分析、关键词分析、定价测算、文案模板、数据看板。
+## 目录结构
 
-### 管理后台
-管理后台是你自己用的，不给普通用户看，重点是管理客户和系统：用户管理、店铺授权管理、用户套餐/权限管理、数据同步任务管理、API 服务状态、异常任务处理、后台运营配置。
+```text
+dae-erp-formal-dev/
+├─ user-frontend/       用户前台
+├─ admin-frontend/      管理后台
+├─ backend/             FastAPI 后端
+├─ docs/                产品、接口、数据库、部署文档
+├─ docker-compose.yml   PostgreSQL + Redis 开发环境
+└─ .env.example         环境变量示例
+```
 
-## 二、本地启动
-
-### 1. 启动后端
+## 启动后端
 
 ```bash
 cd backend
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8010
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8010
 ```
 
-后端健康检查：`http://127.0.0.1:8010/health`
-
-API 文档：`http://127.0.0.1:8010/docs`
-
-### 2. 打开用户前台
+接口文档：
 
 ```text
-user-frontend/index.html
+http://127.0.0.1:8010/docs
 ```
 
-### 3. 打开管理后台
+## 默认测试账号
+
+用户前台：
 
 ```text
-admin-frontend/index.html
+账号：demo@example.com
+密码：user123456
 ```
 
-## 三、线上部署建议
+管理后台：
 
-正式开发不建议只放 GitHub Pages。推荐：
+```text
+账号：admin@example.com
+密码：admin123456
+```
 
-- 前台：Vercel / Netlify / Cloudflare Pages
-- 后台：Vercel / Netlify / Cloudflare Pages，或者单独二级域名 `admin.xxx.com`
-- 后端：Render / Railway / Fly.io / 阿里云 / 腾讯云 / 服务器
-- 数据库：PostgreSQL
-- 缓存和任务：Redis + 定时任务
+## 打开前端
 
-## 四、正式开发优先级
+用户前台：
 
-第一阶段先做 MVP：用户注册登录、前后台权限分离、用户绑定店铺、商品列表同步、订单列表同步、库存预警、定价工具、后台用户管理、后台店铺管理、后台同步任务管理。
+```text
+user-frontend/login.html
+```
 
-详细规划见 `docs/`。
+管理后台：
+
+```text
+admin-frontend/login.html
+```
+
+## V3 使用流程
+
+1. 启动后端。
+2. 打开 `user-frontend/login.html`。
+3. 登录普通用户账号。
+4. 进入 `connect-store.html`。
+5. 填写 Ozon Client ID 和 API Key。
+6. 勾选“提交时立即测试 Ozon API 授权”。
+7. 提交后查看店铺状态。
+8. 管理员登录后台，在 `admin-frontend/stores.html` 查看所有店铺授权状态。
+
+## 注意
+
+如果你从 V2 升级到 V3，本地已有 `backend/dae_erp.db`，可能缺少新增字段。开发阶段最简单的处理方式是删除旧数据库文件后重新启动后端：
+
+```text
+backend/dae_erp.db
+```
+
+正式上线后不能这样处理，需要使用 Alembic 做数据库迁移。
+
+## 下一步
+
+建议做 V4：Ozon 商品同步。

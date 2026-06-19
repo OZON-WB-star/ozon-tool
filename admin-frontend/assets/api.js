@@ -24,6 +24,14 @@
     return window.localStorage.getItem(USER_ID_KEY) || "";
   }
 
+  function getToken() {
+    return window.localStorage.getItem(TOKEN_KEY) || "";
+  }
+
+  function isAdminPortal() {
+    return window.location.pathname.includes("/admin-frontend/") || window.location.pathname.includes("/admin/");
+  }
+
   function setSession(token, userId) {
     if (token) window.localStorage.setItem(TOKEN_KEY, token);
     if (userId) window.localStorage.setItem(USER_ID_KEY, userId);
@@ -38,6 +46,7 @@
     const response = await fetch(`${getBaseUrl()}${path}`, {
       headers: {
         "Content-Type": "application/json",
+        ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {}),
         ...options?.headers,
       },
       ...options,
@@ -68,6 +77,8 @@
       health: item.health,
       syncedAt: item.synced_at,
       note: item.note,
+      clientIdMasked: item.client_id_masked,
+      apiKeyMasked: item.api_key_masked,
     };
   }
 
@@ -78,6 +89,8 @@
       rubPrice: item.rub_price,
       margin: item.margin,
       note: item.note,
+      clientIdMasked: item.client_id_masked,
+      apiKeyMasked: item.api_key_masked,
     };
   }
 
@@ -338,76 +351,39 @@
 
   async function bootstrapDashboardData() {
     try {
-      const userId = getUserId();
-      const [
-        me,
-        stores,
-        storeConfigs,
-        users,
-        productsOverview,
-        productsOnline,
-        productDrafts,
-        inventoryAlerts,
-        selectionOverview,
-        analysisOverview,
-        analysisProducts,
-        analysisOrders,
-        selectionCategories,
-        selectionKeywords,
-        selectionProducts,
-        toolRates,
-        toolTaxes,
-        toolTemplates,
-        adminSummary,
-        adminServices,
-        adminJobs,
-      ] = await Promise.all([
-        request(`/api/users/me${userId ? `?user_id=${encodeURIComponent(userId)}` : ""}`),
-        request("/api/stores"),
-        request("/api/stores/configs"),
-        request("/api/admin/users"),
-        request("/api/products/overview"),
-        request("/api/products/online"),
-        request("/api/products/drafts"),
-        request("/api/products/inventory"),
-        request("/api/selection/overview"),
-        request("/api/analysis/overview"),
-        request("/api/analysis/products"),
-        request("/api/analysis/orders"),
-        request("/api/selection/categories"),
-        request("/api/selection/keywords"),
-        request("/api/selection/products"),
-        request("/api/tools/rates"),
-        request("/api/tools/taxes"),
-        request("/api/tools/templates"),
-        request("/api/admin/summary"),
-        request("/api/admin/services"),
-        request("/api/admin/jobs"),
-      ]);
+      const commonRequests = [
+        ["me", request("/api/users/me")],
+        ["stores", request("/api/stores")],
+        ["storeConfigs", request("/api/stores/configs")],
+        ["productsOverview", request("/api/products/overview")],
+        ["productsOnline", request("/api/products/online")],
+        ["productDrafts", request("/api/products/drafts")],
+        ["inventoryAlerts", request("/api/products/inventory")],
+        ["selectionOverview", request("/api/selection/overview")],
+        ["analysisOverview", request("/api/analysis/overview")],
+        ["analysisProducts", request("/api/analysis/products")],
+        ["analysisOrders", request("/api/analysis/orders")],
+        ["selectionCategories", request("/api/selection/categories")],
+        ["selectionKeywords", request("/api/selection/keywords")],
+        ["selectionProducts", request("/api/selection/products")],
+        ["toolRates", request("/api/tools/rates")],
+        ["toolTaxes", request("/api/tools/taxes")],
+        ["toolTemplates", request("/api/tools/templates")],
+      ];
 
-      mergeDashboardData({
-        me,
-        stores,
-        users,
-        storeConfigs,
-        productsOverview,
-        productsOnline,
-        productDrafts,
-        inventoryAlerts,
-        selectionOverview,
-        analysisOverview,
-        analysisProducts,
-        analysisOrders,
-        selectionCategories,
-        selectionKeywords,
-        selectionProducts,
-        toolRates,
-        toolTaxes,
-        toolTemplates,
-        adminSummary,
-        adminServices,
-        adminJobs,
-      });
+      const adminRequests = isAdminPortal()
+        ? [
+            ["users", request("/api/admin/users")],
+            ["adminSummary", request("/api/admin/summary")],
+            ["adminServices", request("/api/admin/services")],
+            ["adminJobs", request("/api/admin/jobs")],
+          ]
+        : [];
+
+      const entries = await Promise.all(
+        [...commonRequests, ...adminRequests].map(async ([key, promise]) => [key, await promise])
+      );
+      mergeDashboardData(Object.fromEntries(entries));
 
       window.DaeRuntime = {
         apiEnabled: true,
@@ -428,6 +404,7 @@
     getBaseUrl,
     setBaseUrl,
     getUserId,
+    getToken,
     setSession,
     clearSession,
     request,
@@ -445,11 +422,20 @@
       });
     },
     connectStore(payload) {
-      const userId = getUserId();
-      const query = userId ? `?user_id=${encodeURIComponent(userId)}` : "";
-      return request(`/api/stores/connect${query}`, {
+      return request("/api/stores/connect", {
         method: "POST",
         body: JSON.stringify(payload),
+      });
+    },
+    testOzonCredentials(payload) {
+      return request("/api/ozon/test-credentials", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
+    },
+    retestStore(storeId) {
+      return request(`/api/stores/${storeId}/test`, {
+        method: "POST",
       });
     },
   };

@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>澶ч箙ERP - 鎺ュ叆搴楅摵</title>
+  <title>大鹅ERP - 接入 Ozon 店铺</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,124 +11,74 @@
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-mark">DE</div>
-        <div>
-          <div style="font-size:20px;font-weight:800;">澶ч箙ERP</div>
-          <div class="brand-sub">鐢ㄦ埛涓績涓庡簵閾烘帴鍏?/div>
-        </div>
+        <div><div style="font-size:20px;font-weight:800;">大鹅ERP</div><div class="brand-sub">用户前台 / 店铺授权</div></div>
       </div>
       <div class="nav-group">
-        <a class="nav-item" href="index.html"><span>鍓嶅彴棣栭〉</span><small>Home</small></a>
+        <a class="nav-item" href="index.html"><span>前台首页</span><small>Home</small></a>
         <div class="nav-section">
-          <div class="nav-section-title active"><span>鐢ㄦ埛涓績</span><span>鈻?/span></div>
+          <div class="nav-section-title active"><span>用户中心</span><span>▾</span></div>
           <div class="nav-sublist">
-            <a class="nav-subitem" href="account.html"><span>璐﹀彿姒傝</span></a>
-            <a class="nav-subitem active" href="connect-store.html"><span>鎺ュ叆搴楅摵</span></a>
-            <a class="nav-subitem" href="analysis.html"><span>鍏嶈垂鍒嗘瀽</span></a>
+            <a class="nav-subitem" href="account.html"><span>账号概览</span></a>
+            <a class="nav-subitem active" href="connect-store.html"><span>接入店铺</span></a>
+            <a class="nav-subitem" href="store-list.html"><span>我的店铺</span></a>
           </div>
         </div>
-        <a class="nav-item" href="stores.html"><span>搴楅摵妯″潡</span><small>Stores</small></a>
-        <a class="nav-item" href="admin/index.html"><span>绠＄悊鍚庡彴</span><small>Admin</small></a>
+        <a class="nav-item" href="products.html"><span>商品模块</span><small>Products</small></a>
+        <a class="nav-item" href="orders.html"><span>订单模块</span><small>Orders</small></a>
       </div>
     </aside>
 
     <main class="main">
       <div class="shell-topbar inner-shell">
-        <div class="shell-topbar-left">
-          <div class="shell-icon">鈽?/div>
-          <div class="shell-icon">鈫?/div>
-          <div class="shell-pill">鎺ュ叆 Ozon 搴楅摵</div>
-        </div>
-        <div class="shell-topbar-right">
-          <a class="shell-pill brand" href="store-auth.html">杩涘叆搴楅摵鎺堟潈妯″潡</a>
-          <a class="shell-pill gold" href="account.html">杩斿洖鐢ㄦ埛涓績</a>
-        </div>
+        <div class="shell-topbar-left"><div class="shell-icon">●</div><div class="shell-icon">→</div><div class="shell-pill">接入 Ozon 店铺</div></div>
+        <div class="shell-topbar-right"><a class="shell-pill brand" href="store-auth.html">查看授权状态</a><a class="shell-pill gold" href="account.html">返回用户中心</a></div>
       </div>
 
       <section class="content">
         <div class="module-banner">
           <div>
-            <div class="breadcrumb"><span>澶ч箙ERP</span><span>/</span><span>鐢ㄦ埛涓績</span><span>/</span><span>鎺ュ叆搴楅摵</span></div>
-            <h2>鍓嶅彴鐢ㄦ埛鑷繁鎺ュ叆 Ozon 搴楅摵</h2>
-            <p>杩欎竴椤电幇鍦ㄥ凡缁忚兘鎶婅〃鍗曟彁浜ゅ埌鏈湴 FastAPI 鍚庣銆傚悗闈㈢户缁帴涓?Seller API 鐪熸鎺堟潈鏃讹紝鎴戜滑灏卞湪杩欎釜鍏ュ彛涓婄户缁ˉ榻愩€?/p>
-            <div class="feature-links">
-              <span class="badge">Seller API</span>
-              <span class="badge">Cookie 鍏煎</span>
-              <span class="badge">鐘舵€佹牎楠?/span>
-              <span class="badge">鍚屾瑙勫垯</span>
-            </div>
+            <div class="breadcrumb"><span>大鹅ERP</span><span>/</span><span>用户前台</span><span>/</span><span>店铺授权</span></div>
+            <h2>用户自己绑定 Ozon Seller API</h2>
+            <p>V3 已经加入真实授权测试：提交 Client ID 和 API Key 后，后端会请求 Ozon Seller API 的仓库列表接口，判断密钥是否有效。测试通过后店铺状态会变成“正常”。</p>
+            <div class="feature-links"><span class="badge">Seller API</span><span class="badge">权限隔离</span><span class="badge">密钥加密保存</span><span class="badge">授权状态检测</span></div>
           </div>
           <div class="meta-grid">
-            <div class="meta-card"><div class="k">鎺ㄨ崘鏂瑰紡</div><div class="v">Seller API</div></div>
-            <div class="meta-card"><div class="k">鍏煎鏂瑰紡</div><div class="v">Cookie</div></div>
-            <div class="meta-card"><div class="k">閫傜敤鍦烘櫙</div><div class="v">鏂板 / 鎹㈢粦</div></div>
-            <div class="meta-card"><div class="k">涓嬩竴鍔ㄤ綔</div><div class="v" data-bind="currentUser.nextStep"></div></div>
+            <div class="meta-card"><div class="k">推荐方式</div><div class="v">Seller API</div></div>
+            <div class="meta-card"><div class="k">测试接口</div><div class="v">/v1/warehouse/list</div></div>
+            <div class="meta-card"><div class="k">后续用途</div><div class="v">商品 / 订单 / 库存同步</div></div>
+            <div class="meta-card"><div class="k">接口地址</div><div class="v" data-runtime-base>http://127.0.0.1:8010</div></div>
           </div>
         </div>
 
         <div class="panel">
-          <div class="panel-header">
-            <div class="panel-title">
-              <h3>搴楅摵鎺ュ叆琛ㄥ崟</h3>
-              <span>鎻愪氦鎴愬姛鍚庝細鎶婃柊搴楅摵鍐欏叆婕旂ず鍚庣锛屽苟鍥炲埌鐢ㄦ埛涓績鏌ョ湅鐘舵€併€?/span>
-            </div>
-          </div>
+          <div class="panel-header"><div class="panel-title"><h3>Ozon 店铺授权表单</h3><span>正式开发建议：每个用户只能管理自己绑定的店铺；后台可以查看全部店铺授权状态。</span></div></div>
           <form data-store-form>
             <div class="form-grid two">
-              <div class="field">
-                <label for="store-name">搴楅摵鍚嶇О</label>
-                <input id="store-name" name="name" type="text" placeholder="渚嬪锛歈IHA-GEILI" required>
-              </div>
-              <div class="field">
-                <label for="store-site">绔欑偣</label>
-                <select id="store-site" name="site">
-                  <option value="Ozon RU">Ozon RU</option>
-                  <option value="Ozon KZ">Ozon KZ</option>
-                  <option value="Ozon BY">Ozon BY</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="store-auth">鎺ュ叆鏂瑰紡</label>
-                <select id="store-auth" name="auth">
-                  <option value="api">Seller API</option>
-                  <option value="cookie">Cookie</option>
-                  <option value="hybrid">娣峰悎妯″紡</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="store-client-id">Client ID</label>
-                <input id="store-client-id" name="client_id" type="text" placeholder="璇疯緭鍏?Ozon Client ID">
-              </div>
-              <div class="field">
-                <label for="store-api-key">API Key / 瀵嗛挜</label>
-                <input id="store-api-key" name="api_key" type="text" placeholder="璇疯緭鍏?API Key">
-              </div>
-              <div class="field">
-                <label for="store-email">璐熻矗浜洪偖绠?/label>
-                <input id="store-email" name="owner_email" type="email" placeholder="璇疯緭鍏ヨ仈绯婚偖绠? required>
-              </div>
+              <div class="field"><label for="store-name">店铺名称</label><input id="store-name" name="name" type="text" placeholder="例如：WYFAN-Ozon-RU" required></div>
+              <div class="field"><label for="store-site">站点</label><select id="store-site" name="site"><option value="Ozon RU">Ozon RU</option><option value="Ozon KZ">Ozon KZ</option><option value="Ozon BY">Ozon BY</option></select></div>
+              <div class="field"><label for="store-auth">接入方式</label><select id="store-auth" name="auth"><option value="api">Seller API</option></select></div>
+              <div class="field"><label for="store-client-id">Client ID</label><input id="store-client-id" name="client_id" type="text" placeholder="Ozon 卖家后台 Seller API 的 Client ID" required></div>
+              <div class="field"><label for="store-api-key">API Key</label><input id="store-api-key" name="api_key" type="password" placeholder="Ozon API Key，提交后后端加密保存" required></div>
+              <div class="field"><label for="store-email">负责人邮箱</label><input id="store-email" name="owner_email" type="email" placeholder="可选，默认按当前登录账号归属"></div>
             </div>
-            <div class="field" style="margin-top:14px;">
-              <label for="store-note">澶囨敞</label>
-              <textarea id="store-note" name="note" placeholder="鍙～鍐欏簵閾虹敤閫斻€佹巿鏉冭鏄庛€侀渶瑕佸悓姝ョ殑妯″潡绛変俊鎭?></textarea>
-            </div>
+            <div class="field" style="margin-top:14px;"><label for="store-note">备注</label><textarea id="store-note" name="note" placeholder="例如：主店铺、测试店铺、仅用于商品同步等"></textarea></div>
+            <label style="display:flex;gap:8px;align-items:center;margin-top:14px;"><input type="checkbox" name="test_now" checked> 提交时立即测试 Ozon API 授权</label>
             <div class="notice-strip" data-form-message style="display:none;margin-top:14px;"></div>
-            <div class="form-actions" style="margin-top:18px;">
-              <button class="button primary" type="submit">鎻愪氦骞剁户缁厤缃?/button>
-              <a class="button ghost" href="store-auth.html">鏌ョ湅瀹屾暣鎺堟潈椤?/a>
-            </div>
+            <div class="form-actions" style="margin-top:18px;"><button class="button primary" type="submit">保存并测试授权</button><a class="button ghost" href="store-auth.html">查看授权状态</a></div>
           </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title"><h3>Ozon API Key 获取位置</h3><span>进入 Ozon 卖家后台，打开设置里的 Seller API / API Keys，生成 API Key 并复制 Client ID。</span></div></div>
+          <div class="notice-strip">注意：API Key 只会在创建时显示一次。正式上线前建议使用 HTTPS、生产级密钥加密、操作日志和权限审计。</div>
         </div>
       </section>
     </main>
   </div>
   <script src="assets/config.js"></script>
   <script src="assets/mock-data.js"></script>
-  <script src="assets/config.js"></script>
   <script src="assets/api.js"></script>
   <script src="assets/app.js"></script>
   <script src="assets/portal.js"></script>
 </body>
 </html>
-
-
-
