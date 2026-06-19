@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OZON + 1688 网页工作台</title>
+  <title>OZON + 1688 网页版工作台</title>
   <style>
     :root {
       --bg: #0b1220;
-      --panel: rgba(15, 23, 42, 0.78);
+      --panel: rgba(12, 20, 36, 0.82);
       --line: rgba(148, 163, 184, 0.18);
-      --text: #e5eefc;
+      --text: #ebf2ff;
       --muted: #9fb0cc;
       --accent: #ff9f43;
-      --accent-2: #46d3c6;
+      --accent-2: #55d6be;
       --danger: #ff6b6b;
-      --success: #67e8a1;
+      --success: #7ae29a;
       --shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
     }
     * { box-sizing: border-box; }
@@ -22,59 +22,250 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(70, 211, 198, 0.18), transparent 35%),
-        radial-gradient(circle at top right, rgba(255, 159, 67, 0.18), transparent 28%),
-        linear-gradient(160deg, #060b16 0%, #0b1220 52%, #10182a 100%);
+        radial-gradient(circle at top left, rgba(85, 214, 190, 0.16), transparent 36%),
+        radial-gradient(circle at top right, rgba(255, 159, 67, 0.16), transparent 30%),
+        linear-gradient(160deg, #06101c 0%, #0b1220 52%, #121d30 100%);
       font-family: "Segoe UI Variable", "Microsoft YaHei UI", "PingFang SC", sans-serif;
       min-height: 100vh;
     }
-    .shell { max-width: 1480px; margin: 0 auto; padding: 28px 22px 36px; }
-    .hero, .card, .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); backdrop-filter: blur(14px); border-radius: 22px; }
-    .hero { display: grid; grid-template-columns: 1.8fr 1fr; gap: 16px; margin-bottom: 16px; padding: 24px 26px; }
-    .eyebrow { color: var(--accent-2); letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
-    h1 { margin: 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.05; }
-    .subtitle { margin-top: 14px; max-width: 760px; color: var(--muted); line-height: 1.7; font-size: 15px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--line); font-size: 13px; }
-    .status-strip { padding: 20px; display: grid; gap: 10px; }
-    .status-title { font-size: 14px; color: var(--muted); }
-    .status-value { font-size: 18px; font-weight: 700; }
-    .status-meta { display: grid; gap: 8px; font-size: 13px; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: 1.05fr 1.1fr; gap: 16px; align-items: start; }
-    .card { padding: 20px; }
-    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
-    .section-title h2 { margin: 0; font-size: 20px; }
-    .section-title p { margin: 0; color: var(--muted); font-size: 13px; }
-    .uploader { border: 1px dashed rgba(255,255,255,0.18); background: rgba(255,255,255,0.04); padding: 18px; border-radius: 18px; display: grid; gap: 12px; }
-    .uploader input[type="file"] { width: 100%; color: var(--muted); }
-    .row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn { appearance: none; border: 0; border-radius: 14px; padding: 12px 16px; font-weight: 700; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; }
+    .shell {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 26px 20px 34px;
+    }
+    .hero, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 18px;
+      padding: 24px 26px;
+      margin-bottom: 18px;
+    }
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.06;
+    }
+    .subtitle {
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 760px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .status {
+      display: grid;
+      gap: 12px;
+      padding: 6px 2px;
+    }
+    .status .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .status .value {
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.08fr 1fr;
+      gap: 18px;
+    }
+    .card {
+      padding: 20px;
+    }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+    .panel {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+    .field label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    input[type="text"], input[type="file"] {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(8, 13, 24, 0.72);
+      color: var(--text);
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
     .btn:hover { transform: translateY(-1px); }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #ffd166); color: #1c1404; }
-    .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text); border: 1px solid var(--line); }
-    .btn-danger { background: rgba(255, 107, 107, 0.18); color: #ffdede; border: 1px solid rgba(255, 107, 107, 0.35); }
-    .stack { display: grid; gap: 12px; }
-    .kv { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ffd166);
+      color: #1e1403;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-danger {
+      background: rgba(255, 107, 107, 0.18);
+      color: #ffe0e0;
+      border: 1px solid rgba(255, 107, 107, 0.35);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+    }
+    .metric .num {
+      display: block;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .kv {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
     .kv:last-child { border-bottom: 0; }
-    .kv .k { color: var(--muted); }
-    .kv .v { word-break: break-all; }
-    .summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-    .metric { padding: 16px; border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04)); border: 1px solid var(--line); }
-    .metric .num { display: block; font-size: 24px; font-weight: 800; margin-bottom: 4px; }
-    .metric .label { color: var(--muted); font-size: 13px; }
-    .table-wrap { overflow: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(7, 12, 22, 0.72); }
-    table { width: 100%; border-collapse: collapse; min-width: 1000px; }
-    thead th { position: sticky; top: 0; background: #111827; color: #d8e6ff; text-align: left; font-size: 13px; padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    tbody td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; color: #e6eefc; vertical-align: top; }
-    tbody tr:hover td { background: rgba(255,255,255,0.03); }
+    .k { color: var(--muted); }
+    .v { word-break: break-all; }
     .muted { color: var(--muted); }
+    .ok { color: var(--success); }
     .warn { color: #ffd166; }
-    .footer { margin-top: 18px; color: var(--muted); font-size: 12px; line-height: 1.8; }
-    a { color: #8bd3ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 1100px) { .hero, .grid { grid-template-columns: 1fr; } .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 720px) { .shell { padding: 16px 12px 28px; } .summary-grid { grid-template-columns: 1fr; } .kv { grid-template-columns: 1fr; gap: 4px; } }
+    .table-wrap {
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(8, 13, 24, 0.72);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: top;
+      font-size: 13px;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      background: #10192b;
+      color: #d7e7ff;
+    }
+    .files {
+      display: grid;
+      gap: 10px;
+      max-height: 290px;
+      overflow: auto;
+    }
+    .file-item {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+    .file-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .footer {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    @media (max-width: 1100px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .shell { padding: 16px 12px 26px; }
+      .metrics { grid-template-columns: 1fr; }
+      .kv { grid-template-columns: 1fr; gap: 4px; }
+    }
   </style>
 </head>
 <body>
@@ -82,91 +273,148 @@
     <div class="hero">
       <div>
         <div class="eyebrow">OZON + 1688 WEB WORKBENCH</div>
-        <h1>OZON 选品 + 1688 找货 + ERP 上品<br/>网页版本</h1>
+        <h1>OZON 选品 + 1688 找货 + ERP 上品<br />网页版本</h1>
         <div class="subtitle">
-          这是你桌面软件的网页化工作台。先上传 Excel，生成可上品表，再逐步接入 1688 检索和 ERP 自动填单。
+          现在网页版本默认以 `F:\OZON-PY\OZON_1688独立软件_final` 作为主目录。
+          最新导出、1688 结果表、ERP 上品表，都会优先从这个目录读取并写回这个目录。
         </div>
         <div class="chips">
-          <div class="chip">本地运行</div>
-          <div class="chip">Excel 上传</div>
+          <div class="chip">默认 F 盘主工程</div>
+          <div class="chip">自动定位最新导出</div>
+          <div class="chip">1688 运行 / 停止</div>
           <div class="chip">ERP 上品表生成</div>
-          <div class="chip">结果下载</div>
-          <div class="chip">后续可接 1688 自动找品</div>
         </div>
       </div>
-      <div class="status-strip">
-        <div class="status-title">当前状态</div>
-        <div class="status-value" id="jobStatus">正在载入...</div>
-        <div class="status-meta">
-          <div>当前文件：<span id="currentUpload" class="muted">无</span></div>
-          <div>最新结果：<span id="currentResult" class="muted">无</span></div>
-          <div>提示：<span id="message" class="muted">无</span></div>
-        </div>
+      <div class="status">
+        <div class="label">当前任务状态</div>
+        <div class="value" id="jobStatus">加载中...</div>
+        <div class="label">提示</div>
+        <div id="message" class="muted">-</div>
+        <div class="label">浏览器调试地址</div>
+        <div id="currentCdp" class="muted">http://127.0.0.1:9222</div>
       </div>
     </div>
 
     <div class="grid">
-      <div class="card">
-        <div class="section-title">
-          <div>
-            <h2>上传与处理</h2>
-            <p>上传 Excel 后，点击生成 ERP 上品表。结果会自动保存到本地。</p>
+      <div class="stack">
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>主流程</h2>
+              <p>先刷新最新导出，再检测浏览器，然后运行 1688 找品，最后生成 ERP 上品表。</p>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="field">
+              <label for="cdpUrl">Chrome / Edge 调试地址</label>
+              <input id="cdpUrl" type="text" value="http://127.0.0.1:9222" />
+            </div>
+
+            <div class="row">
+              <button class="btn btn-secondary" id="refreshLatestBtn">刷新最新导出</button>
+              <button class="btn btn-secondary" id="checkBrowserBtn">检测 1688 浏览器</button>
+              <button class="btn btn-primary" id="run1688Btn">运行 1688 找品</button>
+              <button class="btn btn-danger" id="stopJobBtn">停止当前任务</button>
+            </div>
+
+            <div class="row">
+              <button class="btn btn-secondary" id="generateErpBtn">生成 ERP 上品表</button>
+              <button class="btn btn-secondary" id="clearBtn">清空当前状态</button>
+              <a class="btn btn-secondary" id="downloadResultBtn" href="#" target="_blank" style="display:none;">下载 1688 结果</a>
+              <a class="btn btn-secondary" id="downloadErpBtn" href="#" target="_blank" style="display:none;">下载 ERP 表</a>
+            </div>
           </div>
         </div>
-        <div class="uploader">
-          <input id="fileInput" type="file" accept=".xlsx,.xlsm,.xltx,.xltm" />
-          <div class="row">
-            <button class="btn btn-primary" id="uploadBtn">上传 Excel</button>
-            <button class="btn btn-secondary" id="generateBtn">生成 ERP 上品表</button>
-            <button class="btn btn-secondary" id="refreshBtn">刷新状态</button>
-            <button class="btn btn-danger" id="clearBtn">清空当前文件</button>
+
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>手动上传</h2>
+              <p>如果不想依赖自动定位，也可以直接上传一个 Excel 作为当前源文件。</p>
+            </div>
           </div>
-          <div class="muted">建议上传你当前已经处理好的 `_1688_ready.xlsx` 文件。</div>
+
+          <div class="stack">
+            <input id="fileInput" type="file" accept=".xlsx,.xlsm,.xltx,.xltm" />
+            <div class="row">
+              <button class="btn btn-primary" id="uploadBtn">上传 Excel</button>
+              <button class="btn btn-secondary" id="refreshStateBtn">刷新状态</button>
+            </div>
+          </div>
         </div>
-        <div style="height:14px"></div>
-        <div class="summary-grid" id="summaryGrid">
-          <div class="metric"><span class="num">-</span><span class="label">工作表数量</span></div>
-          <div class="metric"><span class="num">-</span><span class="label">目标行数</span></div>
-          <div class="metric"><span class="num">-</span><span class="label">文件大小</span></div>
-          <div class="metric"><span class="num">-</span><span class="label">最新状态</span></div>
-        </div>
-        <div class="footer">
-          <div>网页服务地址：<span class="warn">http://127.0.0.1:8000</span></div>
-          <div>后续可以把 1688 自动找品和 ERP 自动填单也接到这个网页后台里。</div>
+
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>当前文件</h2>
+              <p>当前正在处理的源文件、1688 结果表和 ERP 表。</p>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="kv"><div class="k">项目主目录</div><div class="v" id="projectRoot">-</div></div>
+            <div class="kv"><div class="k">导出目录</div><div class="v" id="exportRoot">-</div></div>
+            <div class="kv"><div class="k">当前源文件</div><div class="v" id="sourcePath">-</div></div>
+            <div class="kv"><div class="k">1688 结果表</div><div class="v" id="resultPath">-</div></div>
+            <div class="kv"><div class="k">ERP 上品表</div><div class="v" id="erpPath">-</div></div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="section-title">
-          <div>
-            <h2>文件与预览</h2>
-            <p>查看当前文件信息、生成结果和前几条商品预览。</p>
+      <div class="stack">
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>Excel 摘要</h2>
+              <p>根据当前源文件或当前结果表自动预览。</p>
+            </div>
           </div>
-          <a class="btn btn-secondary" id="downloadLink" href="#" target="_blank" style="display:none;text-decoration:none;">下载结果</a>
+          <div class="metrics">
+            <div class="metric"><span class="num" id="metricSheets">-</span><span class="label">工作表数</span></div>
+            <div class="metric"><span class="num" id="metricRows">-</span><span class="label">目标行数</span></div>
+            <div class="metric"><span class="num" id="metricSize">-</span><span class="label">文件大小</span></div>
+            <div class="metric"><span class="num" id="metricJob">-</span><span class="label">任务状态</span></div>
+          </div>
         </div>
-        <div class="stack">
-          <div class="panel" style="padding:16px;">
-            <div class="kv"><div class="k">输入文件</div><div class="v" id="uploadPath">无</div></div>
-            <div class="kv"><div class="k">输出文件</div><div class="v" id="resultPath">无</div></div>
-            <div class="kv"><div class="k">处理任务</div><div class="v" id="jobInfo">无</div></div>
+
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>最近 Excel 文件</h2>
+              <p>优先显示 F 盘主工程里的导出文件。</p>
+            </div>
+          </div>
+          <div class="files" id="recentFiles"></div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <div>
+              <h2>目标行预览</h2>
+              <p>这里只预览前几条，方便快速确认文件是否正确。</p>
+            </div>
           </div>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th style="width:72px;">#</th>
+                  <th>#</th>
                   <th>商品标题</th>
                   <th>SKU</th>
                   <th>评分</th>
-                  <th>OZON 售价</th>
-                  <th>1688 匹配</th>
+                  <th>人民币价格</th>
+                  <th>1688 状态</th>
                   <th>备注</th>
                 </tr>
               </thead>
               <tbody id="previewBody">
-                <tr><td colspan="7" class="muted">暂无数据，请先上传 Excel。</td></tr>
+                <tr><td colspan="7" class="muted">暂无数据</td></tr>
               </tbody>
             </table>
+          </div>
+          <div class="footer">
+            网页服务地址：`http://127.0.0.1:8000`。<br />
+            这版已经统一默认使用 `F:\OZON-PY` 主项目；后面我们再继续把 OZON 采集和 ERP 自动上品更深地接进这个网页版本。
           </div>
         </div>
       </div>
@@ -174,62 +422,10 @@
   </div>
 
   <script>
-    const uploadBtn = document.getElementById("uploadBtn");
-    const generateBtn = document.getElementById("generateBtn");
-    const refreshBtn = document.getElementById("refreshBtn");
-    const clearBtn = document.getElementById("clearBtn");
-    const fileInput = document.getElementById("fileInput");
-    const downloadLink = document.getElementById("downloadLink");
-
-    async function refreshState() {
-      const res = await fetch("/api/state", { cache: "no-store" });
-      const data = await res.json();
-      document.getElementById("jobStatus").textContent = data.job ? data.job.status_text : "等待上传 Excel";
-      document.getElementById("currentUpload").textContent = data.current_upload || "无";
-      document.getElementById("currentResult").textContent = data.current_result || "无";
-      document.getElementById("message").textContent = data.message || "无";
-      document.getElementById("uploadPath").textContent = data.current_upload_path || "无";
-      document.getElementById("resultPath").textContent = data.current_result_path || "无";
-      document.getElementById("jobInfo").textContent = data.job ? `${data.job.id} / ${data.job.status_text}` : "无";
-
-      const summary = data.summary || {};
-      const metrics = document.querySelectorAll(".metric .num");
-      metrics[0].textContent = summary.sheet_count ?? "-";
-      metrics[1].textContent = summary.target_rows ?? "-";
-      metrics[2].textContent = summary.file_size_text ?? "-";
-      metrics[3].textContent = data.job ? data.job.status_text : "待命";
-
-      const body = document.getElementById("previewBody");
-      body.innerHTML = "";
-      const preview = data.preview || [];
-      if (!preview.length) {
-        body.innerHTML = '<tr><td colspan="7" class="muted">暂无可预览的目标行。</td></tr>';
-      } else {
-        preview.forEach((row, index) => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${escapeHtml(row.title || "")}</td>
-            <td>${escapeHtml(row.sku || "")}</td>
-            <td>${row.score ?? ""}</td>
-            <td>${row.ozon_price_cny ?? ""}</td>
-            <td>${escapeHtml(row.status || "")}</td>
-            <td>${escapeHtml(row.note || "")}</td>
-          `;
-          body.appendChild(tr);
-        });
-      }
-
-      if (data.current_result_path) {
-        downloadLink.style.display = "inline-flex";
-        downloadLink.href = data.download_url || "#";
-      } else {
-        downloadLink.style.display = "none";
-      }
-    }
+    const el = (id) => document.getElementById(id);
 
     function escapeHtml(value) {
-      return String(value)
+      return String(value ?? "")
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
         .replaceAll(">", "&gt;")
@@ -237,65 +433,191 @@
         .replaceAll("'", "&#39;");
     }
 
+    async function postJson(url, payload = {}) {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || data.message || "请求失败");
+      }
+      return data;
+    }
+
+    async function refreshState() {
+      const res = await fetch("/api/state", { cache: "no-store" });
+      const data = await res.json();
+
+      const job = data.job || null;
+      el("jobStatus").textContent = job ? `${job.kind || "任务"} / ${job.status_text}` : "待命";
+      el("message").textContent = data.message || "-";
+      el("currentCdp").textContent = data.cdp_url || "-";
+      el("cdpUrl").value = data.cdp_url || "http://127.0.0.1:9222";
+
+      el("projectRoot").textContent = data.project_root || "-";
+      el("exportRoot").textContent = data.export_root || "-";
+      el("sourcePath").textContent = data.current_source_path || "-";
+      el("resultPath").textContent = data.current_result_path || "-";
+      el("erpPath").textContent = data.current_erp_path || "-";
+
+      const summary = data.summary || {};
+      el("metricSheets").textContent = summary.sheet_count ?? "-";
+      el("metricRows").textContent = summary.target_rows ?? "-";
+      el("metricSize").textContent = summary.file_size_text ?? "-";
+      el("metricJob").textContent = job ? job.status_text : "待命";
+
+      const resultBtn = el("downloadResultBtn");
+      if (data.download_result_url) {
+        resultBtn.style.display = "inline-flex";
+        resultBtn.href = data.download_result_url;
+      } else {
+        resultBtn.style.display = "none";
+      }
+
+      const erpBtn = el("downloadErpBtn");
+      if (data.download_erp_url) {
+        erpBtn.style.display = "inline-flex";
+        erpBtn.href = data.download_erp_url;
+      } else {
+        erpBtn.style.display = "none";
+      }
+
+      const filesBox = el("recentFiles");
+      const files = data.recent_files || [];
+      filesBox.innerHTML = "";
+      if (!files.length) {
+        filesBox.innerHTML = '<div class="file-item muted">暂无 Excel 文件</div>';
+      } else {
+        files.forEach((file) => {
+          const item = document.createElement("div");
+          item.className = "file-item";
+          item.innerHTML = `
+            <strong>${escapeHtml(file.name)}</strong>
+            <div class="muted">${escapeHtml(file.path)}</div>
+            <div class="muted">${escapeHtml(file.mtime)} / ${escapeHtml(file.size)}</div>
+          `;
+          filesBox.appendChild(item);
+        });
+      }
+
+      const previewBody = el("previewBody");
+      const preview = data.preview || [];
+      previewBody.innerHTML = "";
+      if (!preview.length) {
+        previewBody.innerHTML = '<tr><td colspan="7" class="muted">暂无可预览目标行</td></tr>';
+      } else {
+        preview.forEach((row, index) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${escapeHtml(row.title)}</td>
+            <td>${escapeHtml(row.sku)}</td>
+            <td>${row.score ?? ""}</td>
+            <td>${row.ozon_price_cny ?? ""}</td>
+            <td>${escapeHtml(row.current_status || row.status || "")}</td>
+            <td>${escapeHtml(row.current_note || row.note || "")}</td>
+          `;
+          previewBody.appendChild(tr);
+        });
+      }
+    }
+
     async function uploadFile() {
-      const file = fileInput.files[0];
+      const file = el("fileInput").files[0];
       if (!file) {
         alert("请先选择一个 Excel 文件。");
         return;
       }
       const form = new FormData();
       form.append("file", file);
-      uploadBtn.disabled = true;
-      uploadBtn.textContent = "上传中...";
+      el("uploadBtn").disabled = true;
       try {
         const res = await fetch("/api/upload", { method: "POST", body: form });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "上传失败");
         await refreshState();
-        alert("上传成功：" + data.filename);
-      } catch (err) {
-        alert(err.message);
+        alert(`上传成功：${data.filename}`);
+      } catch (error) {
+        alert(error.message);
       } finally {
-        uploadBtn.disabled = false;
-        uploadBtn.textContent = "上传 Excel";
+        el("uploadBtn").disabled = false;
+      }
+    }
+
+    async function refreshLatest() {
+      try {
+        await postJson("/api/refresh-latest");
+        await refreshState();
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+
+    async function checkBrowser() {
+      try {
+        const data = await postJson("/api/check-browser", { cdp_url: el("cdpUrl").value.trim() });
+        await refreshState();
+        alert(`浏览器检测通过：${data.browser || data.cdp_url}`);
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+
+    async function run1688() {
+      el("run1688Btn").disabled = true;
+      try {
+        await postJson("/api/run-1688", { cdp_url: el("cdpUrl").value.trim() });
+        await refreshState();
+      } catch (error) {
+        alert(error.message);
+      } finally {
+        el("run1688Btn").disabled = false;
+      }
+    }
+
+    async function stopJob() {
+      try {
+        await postJson("/api/stop-job");
+        await refreshState();
+      } catch (error) {
+        alert(error.message);
       }
     }
 
     async function generateErp() {
-      generateBtn.disabled = true;
-      generateBtn.textContent = "处理中...";
+      el("generateErpBtn").disabled = true;
       try {
-        const res = await fetch("/api/generate-erp", { method: "POST" });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "生成失败");
-        alert("已开始生成 ERP 上品表。");
+        await postJson("/api/generate-erp");
         await refreshState();
-      } catch (err) {
-        alert(err.message);
+      } catch (error) {
+        alert(error.message);
       } finally {
-        generateBtn.disabled = false;
-        generateBtn.textContent = "生成 ERP 上品表";
+        el("generateErpBtn").disabled = false;
       }
     }
 
-    async function clearCurrent() {
-      const res = await fetch("/api/clear", { method: "POST" });
-      const data = await res.json();
-      if (!res.ok) {
-        alert(data.error || "清空失败");
-        return;
+    async function clearState() {
+      try {
+        await postJson("/api/clear");
+        await refreshState();
+      } catch (error) {
+        alert(error.message);
       }
-      fileInput.value = "";
-      await refreshState();
     }
 
-    uploadBtn.addEventListener("click", uploadFile);
-    generateBtn.addEventListener("click", generateErp);
-    refreshBtn.addEventListener("click", refreshState);
-    clearBtn.addEventListener("click", clearCurrent);
+    el("uploadBtn").addEventListener("click", uploadFile);
+    el("refreshLatestBtn").addEventListener("click", refreshLatest);
+    el("checkBrowserBtn").addEventListener("click", checkBrowser);
+    el("run1688Btn").addEventListener("click", run1688);
+    el("stopJobBtn").addEventListener("click", stopJob);
+    el("generateErpBtn").addEventListener("click", generateErp);
+    el("clearBtn").addEventListener("click", clearState);
+    el("refreshStateBtn").addEventListener("click", refreshState);
 
     refreshState();
-    setInterval(refreshState, 2000);
+    setInterval(refreshState, 2500);
   </script>
 </body>
 </html>
